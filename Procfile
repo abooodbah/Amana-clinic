@@ -1,1 +1,1 @@
-web: gunicorn wbp:app
+web: gunicorn amana:app

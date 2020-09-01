@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/mdb.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/mdb.lite.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/mdb.lite.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/swiper.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/swiper.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet" href="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.css">
+
+
+    {% if title %}
+        <title>Flask Blog - {{ title }}</title>
+    {% else %}
+        <title>Flask Blog</title>
+    {% endif %}
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
+                    <div class="site-branding d-flex align-items-center">
+                       <a class="d-block" href="index.html" rel="home"><img class="d-block" src="static/images/logo.png" alt="logo" style="width: 75px;;"></a>
+                    </div><!-- .site-branding -->
+
+                    <nav class="site-navigation d-flex justify-content-end align-items-center">
+                        <ul class="d-flex flex-column flex-lg-row justify-content-lg-end align-items-center">
+                            <li class="current-menu-item"><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About us</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="news.html">News</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+
+                            <li class="call-btn button gradient-bg mt-3 mt-md-0">
+                                <a class="d-flex justify-content-center align-items-center" style="font-family: system-ui;" href="#"><img src="static/img/phone.svg" style=" width: 25px; filter: invert(100%);"> 02 622 8660</a>
+                            </li>
+                        </ul>
+                    </nav><!-- .site-navigation -->
+
+                    <div class="hamburger-menu d-lg-none">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div><!-- .hamburger-menu -->
+                </div><!-- .col -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </div><!-- .nav-bar -->
+
+    <div class="swiper-container hero-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide hero-content-wrap" style="background-image: url('static/img/hero-2.png')">
+                <div class="hero-content-overlay position-absolute w-100 h-100">
+                    <div class="container h-100">
+                        <div class="row h-100">
+                            <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-start">
+                                <header class="entry-header">
+                                    <h1>The Best <br>Medical Services</h1>
+                                </header><!-- .entry-header -->
+
+                                <div class="entry-content mt-4">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
+                                </div><!-- .entry-content -->
+
+                                <footer class="entry-footer d-flex flex-wrap align-items-center mt-4">
+                                    <a href="#" class="button gradient-bg" style="color: white!important;">Read More</a>
+                                </footer><!-- .entry-footer -->
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div><!-- .container -->
+                </div><!-- .hero-content-overlay -->
+            </div><!-- .hero-content-wrap -->
+
+            <div class="swiper-slide hero-content-wrap" style="background-image: url('images/hero.jpg')">
+                <div class="hero-content-overlay position-absolute w-100 h-100">
+                    <div class="container h-100">
+                        <div class="row h-100">
+                            <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-start">
+                                <header class="entry-header">
+                                    <h1>The Best <br>Medical Services</h1>
+                                </header><!-- .entry-header -->
+
+                                <div class="entry-content mt-4">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
+                                </div><!-- .entry-content -->
+
+                                <footer class="entry-footer d-flex flex-wrap align-items-center mt-4">
+                                    <a href="#" class="button gradient-bg">Read More</a>
+                                </footer><!-- .entry-footer -->
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div><!-- .container -->
+                </div><!-- .hero-content-overlay -->
+            </div><!-- .hero-content-wrap -->
+
+            <div class="swiper-slide hero-content-wrap" style="background-image: url('images/hero.jpg')">
+                <div class="hero-content-overlay position-absolute w-100 h-100">
+                    <div class="container h-100">
+                        <div class="row h-100">
+                            <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-start">
+                                <header class="entry-header">
+                                    <h1>The Best <br>Medical Services</h1>
+                                </header><!-- .entry-header -->
+
+                                <div class="entry-content mt-4">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
+                                </div><!-- .entry-content -->
+
+                                <footer class="entry-footer d-flex flex-wrap align-items-center mt-4">
+                                    <a href="#" class="button gradient-bg">Read More</a>
+                                </footer><!-- .entry-footer -->
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div><!-- .container -->
+                </div><!-- .hero-content-overlay -->
+            </div><!-- .hero-content-wrap -->
+        </div><!-- .swiper-wrapper -->
+
+        <div class="pagination-wrap position-absolute w-100">
+            <div class="swiper-pagination d-flex flex-row flex-md-column"></div>
+        </div><!-- .pagination-wrap -->
+    </div><!-- .hero-slider -->
+</header><!-- .site-header -->
+    <main role="main" class="container mb-0 mt-0" >
+      <div class="row">
+        
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+
+
+          {% block content %}{% endblock %}
+        
+
+      </div>
+    </main>
+
+
+
+    <footer class="site-footer">
+      <div class="footer-widgets">
+          <div class="container">
+              <div class="row">
+                  <div class="col-12 col-md-6 col-lg-4">
+                      <div class="foot-about">
+                          <h2><a href="#"><img src="static/images/logo.png" alt="" style="width: 75px;"></a></h2>
+
+                          <p>An Abudhabi Based clinic specialized in treating various anal related diseases utilizing the latest international medical methods.</p>
+
+                          <p class="copyright">
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Amana Clinic <i class="fa fa-heart" aria-hidden="true"></i> <hr> by <a href="https://Cortex-Designs.com" target="_blank">Cortex-Designs</a>
+</p>
+                      </div><!-- .foot-about -->
+                  </div><!-- .col -->
+
+                  <div class="col-12 col-md-6 col-lg-4 mt-5 mt-md-0">
+                      <div class="foot-contact">
+                          <h2>Contact</h2>
+
+                          <ul class="p-0 m-0">
+                              <li><span>Addtress:</span>Corniche Rd W - Al Markaziyah West - Abu Dhabi</li>
+                              <li><span>Phone:</span>02 622 8660</li>
+                              <li><span>Email:</span>amana_clinic@hotmail.com</li>
+                          </ul>
+                      </div>
+                  </div><!-- .col -->
+
+                  <div class="col-12 col-md-6 col-lg-4 mt-5 mt-md-0">
+                      <div class="foot-links">
+                          <h2>Usefull Links</h2>
+
+                          <ul class="p-0 m-0">
+                              <li><a href="index.html">Home</a></li>
+                              <li><a href="about.html">About us</a></li>
+                              <li><a href="#">Departments</a></li>
+                              <li><a href="contact.html">Contact</a></li>
+                              <li><a href="news.html">FAQ</a></li>
+                              <li><a href="services.html">Testimonials</a></li>
+                          </ul>
+                      </div><!-- .foot-links -->
+                  </div><!-- .col -->
+              </div><!-- .row -->
+          </div><!-- .container -->
+      </div><!-- .footer-widgets -->
+  </footer><!-- .site-footer -->
+    
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename = 'js/jquery.collapsible.min.js') }}" ></script>
+    <script src="{{ url_for('static', filename = 'js/swiper.min.js') }}" ></script>
+    <script src="{{ url_for('static', filename = 'js/jquery.countdown.min.js') }}" ></script>
+    <script src="{{ url_for('static', filename = 'js/circle-progress.min.js') }}" ></script>
+    <script src="{{ url_for('static', filename = 'js/jquery.countTo.min.js') }}" ></script>
+    <script src="{{ url_for('static', filename = 'js/jquery.barfiller.js') }}" ></script>
+    <script src="{{ url_for('static', filename = 'js/custom.js') }}" ></script>
+
+
+
+  </body>
+</html>

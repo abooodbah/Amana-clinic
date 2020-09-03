@@ -12,6 +12,11 @@ def home():
     posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=5)
     return render_template('home.html', posts=posts)
 
+@main.route("/contact")
+def contact():
+
+    return render_template('contact.html')
+
 @main.route("/test")
 def test():
     page = request.args.get('page', 1, type=int)
@@ -19,9 +24,7 @@ def test():
     FAQs = FAQ.query.order_by(Post.date_posted.desc())
     Services = Service.query.all()
     posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=5)
-    if (Services is None):
-        print("ssssssssssssssssssssssssssssssssssssssssssssssssss")
-    return render_template('mainxx.html', news = news[-4:], FAQs = FAQs, Services = Services, posts =posts)
+    return render_template('mainxx.html', news = news[-3:], FAQs = FAQs, Services = Services, posts =posts, slider= True)
 
 
 @main.route("/about")
@@ -29,14 +32,7 @@ def about():
     return render_template('about.html', title='About')
 
 
-@main.route("/Services/new")
+@main.route("/Services")
 def services():
-    form = ServiceForm()
-    if form.validate_on_submit():
-        Service_to_add = Service(title=form.title.data, content=form.content.data)
-        db.session.add(Service_to_add)
-        db.session.commit()
-        flash('Your Service has been created!', 'success')
-        return redirect(url_for('main.home'))
-    return render_template('create_post.html', title='New Service',
-                           form=form, legend='New Service')
+    Services = Service.query.all()
+    return render_template('Service.html', title='Service', legend='New Service', Services = Services)

@@ -28,8 +28,8 @@
     {% endif %}
 </head>
 <body>
-  <header class="site-header">
-    <div class="nav-bar">
+  <header class="site-header" style="{{'position: relative;padding: 220px 0 140px;background-color: #f0f4f8;' if not slider else ''}}">
+    <div class="nav-bar" id="mynav">
         <div class="container">
             <div class="row">
                 <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
@@ -39,14 +39,14 @@
 
                     <nav class="site-navigation d-flex justify-content-end align-items-center">
                         <ul class="d-flex flex-column flex-lg-row justify-content-lg-end align-items-center">
-                            <li class="current-menu-item"><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About us</a></li>
-                            <li><a href="services.html">Services</a></li>
+                            <li class="current-menu-item"><a href="{{url_for('main.test')}}">Home</a></li>
+                            <li><a href="{{url_for('main.about')}}">About us</a></li>
+                            <li><a href="{{url_for('main.services')}}">Services</a></li>
                             <li><a href="news.html">News</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="{{url_for('main.contact')}}">Contact</a></li>
 
                             <li class="call-btn button gradient-bg mt-3 mt-md-0">
-                                <a class="d-flex justify-content-center align-items-center" style="font-family: system-ui;" href="#"><img src="static/img/phone.svg" style=" width: 25px; filter: invert(100%);"> 02 622 8660</a>
+                                <a class="d-flex justify-content-center align-items-center" style="font-family: system-ui;" href="tel:+97126228660"><img src="static/img/phone.svg" style=" width: 25px; filter: invert(100%);"> 02 622 8660</a>
                             </li>
                         </ul>
                     </nav><!-- .site-navigation -->
@@ -62,82 +62,7 @@
         </div><!-- .container -->
     </div><!-- .nav-bar -->
 
-    <div class="swiper-container hero-slider">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide hero-content-wrap" style="background-image: url('static/img/hero-2.png')">
-                <div class="hero-content-overlay position-absolute w-100 h-100">
-                    <div class="container h-100">
-                        <div class="row h-100">
-                            <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-start">
-                                <header class="entry-header">
-                                    <h1>The Best <br>Medical Services</h1>
-                                </header><!-- .entry-header -->
 
-                                <div class="entry-content mt-4">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
-                                </div><!-- .entry-content -->
-
-                                <footer class="entry-footer d-flex flex-wrap align-items-center mt-4">
-                                    <a href="#" class="button gradient-bg" style="color: white!important;">Read More</a>
-                                </footer><!-- .entry-footer -->
-                            </div><!-- .col -->
-                        </div><!-- .row -->
-                    </div><!-- .container -->
-                </div><!-- .hero-content-overlay -->
-            </div><!-- .hero-content-wrap -->
-
-            <div class="swiper-slide hero-content-wrap" style="background-image: url('images/hero.jpg')">
-                <div class="hero-content-overlay position-absolute w-100 h-100">
-                    <div class="container h-100">
-                        <div class="row h-100">
-                            <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-start">
-                                <header class="entry-header">
-                                    <h1>The Best <br>Medical Services</h1>
-                                </header><!-- .entry-header -->
-
-                                <div class="entry-content mt-4">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
-                                </div><!-- .entry-content -->
-
-                                <footer class="entry-footer d-flex flex-wrap align-items-center mt-4">
-                                    <a href="#" class="button gradient-bg">Read More</a>
-                                </footer><!-- .entry-footer -->
-                            </div><!-- .col -->
-                        </div><!-- .row -->
-                    </div><!-- .container -->
-                </div><!-- .hero-content-overlay -->
-            </div><!-- .hero-content-wrap -->
-
-            <div class="swiper-slide hero-content-wrap" style="background-image: url('images/hero.jpg')">
-                <div class="hero-content-overlay position-absolute w-100 h-100">
-                    <div class="container h-100">
-                        <div class="row h-100">
-                            <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-start">
-                                <header class="entry-header">
-                                    <h1>The Best <br>Medical Services</h1>
-                                </header><!-- .entry-header -->
-
-                                <div class="entry-content mt-4">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
-                                </div><!-- .entry-content -->
-
-                                <footer class="entry-footer d-flex flex-wrap align-items-center mt-4">
-                                    <a href="#" class="button gradient-bg">Read More</a>
-                                </footer><!-- .entry-footer -->
-                            </div><!-- .col -->
-                        </div><!-- .row -->
-                    </div><!-- .container -->
-                </div><!-- .hero-content-overlay -->
-            </div><!-- .hero-content-wrap -->
-        </div><!-- .swiper-wrapper -->
-
-        <div class="pagination-wrap position-absolute w-100">
-            <div class="swiper-pagination d-flex flex-row flex-md-column"></div>
-        </div><!-- .pagination-wrap -->
-    </div><!-- .hero-slider -->
-</header><!-- .site-header -->
-    <main role="main" class="container mb-0 mt-0" >
-      <div class="row">
         
           {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
@@ -158,7 +83,7 @@
 
 
 
-    <footer class="site-footer">
+    <footer class="site-footer" style="background: url({{ url_for('static', filename = 'images/footer-bg.png') }}) no-repeat center #fff;position: relative;padding: 48px 0;background-size: cover;font-size: 14px;color: #828282;">
       <div class="footer-widgets">
           <div class="container">
               <div class="row">
@@ -181,7 +106,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                           <ul class="p-0 m-0">
                               <li><span>Addtress:</span>Corniche Rd W - Al Markaziyah West - Abu Dhabi</li>
                               <li><span>Phone:</span>02 622 8660</li>
-                              <li><span>Email:</span>amana_clinic@hotmail.com</li>
+                              <li><span>Email:</span><a href="mailto:Aamana_clinic@hotmail.com">Aamana_clinic@hotmail.com</a></li>
                           </ul>
                       </div>
                   </div><!-- .col -->
@@ -216,10 +141,14 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="{{ url_for('static', filename = 'js/jquery.collapsible.min.js') }}" ></script>
     <script src="{{ url_for('static', filename = 'js/swiper.min.js') }}" ></script>
     <script src="{{ url_for('static', filename = 'js/jquery.countdown.min.js') }}" ></script>
+    <script src="{{ url_for('static', filename = 'js/jquery.js') }}" ></script>
+    <script src="{{ url_for('static', filename = 'js/jquery.collapsible.min.js') }}" ></script>
+    <script src="{{ url_for('static', filename = 'js/jquery.countdown.min.js') }}" ></script>
     <script src="{{ url_for('static', filename = 'js/circle-progress.min.js') }}" ></script>
     <script src="{{ url_for('static', filename = 'js/jquery.countTo.min.js') }}" ></script>
     <script src="{{ url_for('static', filename = 'js/jquery.barfiller.js') }}" ></script>
     <script src="{{ url_for('static', filename = 'js/custom.js') }}" ></script>
+    <script src="{{ url_for('static', filename = 'js/nav.js') }}" ></script>
 
 
 

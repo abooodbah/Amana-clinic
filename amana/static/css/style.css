@@ -35,6 +35,20 @@ a:hover, a:active {
     list-style: none;
 }
 
+.sticky {
+    position: fixed!important;
+    top: 0!important;
+    width: 100%!important;
+    background: white;
+    transition: .5s ease-in-out;
+    padding: 0px!important;
+  }
+
+.nav-bar{
+transition: .5s ease-in-out;
+}
+  
+
 /*--------------------------------------------------------------
 # Site Header
 --------------------------------------------------------------*/
@@ -341,6 +355,9 @@ a:hover, a:active {
     color: #fff;
     background: #18a3eb;
 }
+
+
+
 
 .button.gradient-bg {
     border-color: transparent;
@@ -1510,7 +1527,6 @@ ul.tabs-nav .tab-nav.active {
 .site-footer {
     position: relative;
     padding: 48px 0;
-    background: url("images/footer-bg.png") no-repeat center #fff;
     background-size: cover;
     font-size: 14px;
     color: #828282;

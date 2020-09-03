@@ -50,7 +50,7 @@ def get_locale():
 		return request.args.get('locale')
 	else:	
 		with app.app_context():
-			return request.accept_languages.best_match(['en','ar'])
+			return request.accept_languages.best_match(['ar'])
 
 #add get_locale() to jinja2 context
 app.jinja_env.globals['get_locale'] = get_locale

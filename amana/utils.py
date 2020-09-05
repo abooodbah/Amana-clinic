@@ -1,6 +1,6 @@
 from flask_admin import AdminIndexView
 from flask_admin.contrib.sqla import ModelView
-from amana.models import Post,User
+from amana.models import User
 from flask_login import current_user
 from flask import abort
 

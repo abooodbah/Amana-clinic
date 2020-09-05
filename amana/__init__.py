@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,request
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
@@ -49,8 +49,7 @@ def get_locale():
 	if request.args.get('locale'):
 		return request.args.get('locale')
 	else:	
-		with app.app_context():
-			return request.accept_languages.best_match(['ar'])
+		return 'ar'
 
 #add get_locale() to jinja2 context
 app.jinja_env.globals['get_locale'] = get_locale
@@ -92,12 +91,12 @@ app.register_blueprint(errors)
 from amana.utils import secure_model_view,secure_index_view
 admin = Admin(app, index_view=secure_index_view())
 #add views to flask_admin
-from amana.models import User,Post, FAQ, NewsPost, Service
+from amana.models import User, FAQ, NewsPost, Service, Information_and_Records
 admin.add_view(secure_model_view(User, db.session))
-admin.add_view(secure_model_view(Post, db.session))
 admin.add_view(secure_model_view(Service, db.session))
 admin.add_view(secure_model_view(FAQ, db.session))
 admin.add_view(secure_model_view(NewsPost, db.session))
+admin.add_view(secure_model_view(Information_and_Records, db.session))
 
 
 

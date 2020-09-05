@@ -1,0 +1,143 @@
+# Arabic translations for PROJECT.
+# Copyright (C) 2020 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2020-09-05 13:08+0400\n"
+"PO-Revision-Date: 2020-09-05 02:05+0400\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ar\n"
+"Language-Team: ar <LL@li.org>\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : "
+"n%100>=3 && n%100<=10 ? 3 : n%100>=0 && n%100<=2 ? 4 : 5)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: amana/templates/HtmlMacros.html:28
+msgid "ID_Studio"
+msgstr ""
+
+#: amana/templates/HtmlMacros.html:30
+msgid "ID_undisclosed"
+msgstr ""
+
+#: amana/templates/HtmlMacros.html:68 amana/templates/HtmlMacros.html:205
+msgid "nav_ID_3_1"
+msgstr ""
+
+#: amana/templates/HtmlMacros.html:69
+msgid "nav_ID_4_1"
+msgstr ""
+
+#: amana/templates/HtmlMacros.html:71 amana/templates/HtmlMacros.html:204
+msgid "nav_ID_3_2"
+msgstr ""
+
+#: amana/templates/HtmlMacros.html:72 amana/templates/HtmlMacros.html:203
+msgid "nav_ID_4_2"
+msgstr ""
+
+#: amana/templates/HtmlMacros.html:74
+msgid "nav_ID_3_3"
+msgstr ""
+
+#: amana/templates/HtmlMacros.html:80
+msgid "Milage"
+msgstr ""
+
+#: amana/templates/HtmlMacros.html:107
+msgid "Bedrooms"
+msgstr ""
+
+#: amana/templates/HtmlMacros.html:112
+msgid "Bathrooms"
+msgstr ""
+
+#: amana/templates/HtmlMacros.html:117
+msgid "Area"
+msgstr ""
+
+#: amana/templates/HtmlMacros.html:189
+msgid "Quick_Links"
+msgstr ""
+
+#: amana/templates/HtmlMacros.html:200
+msgid "For_you"
+msgstr ""
+
+#: amana/templates/HtmlMacros.html:214
+msgid "Popular_Semsar_Cars"
+msgstr ""
+
+#: amana/templates/HtmlMacros.html:216
+msgid "Cars_Sale"
+msgstr ""
+
+#: amana/templates/HtmlMacros.html:217
+msgid "Cars_Sale_dubai"
+msgstr ""
+
+#: amana/templates/HtmlMacros.html:218
+msgid "Cars_Sale_Abudhabi"
+msgstr ""
+
+#: amana/templates/HtmlMacros.html:219
+msgid "All Categories"
+msgstr ""
+
+#: amana/templates/HtmlMacros.html:227 amana/templates/HtmlMacros.html:230
+#: amana/templates/HtmlMacros.html:231 amana/templates/HtmlMacros.html:232
+#: amana/templates/HtmlMacros.html:233
+msgid "Popular_Semsar_Phones"
+msgstr ""
+
+#: amana/templates/HtmlMacros.html:241
+msgid "Popular_Semsar_Property"
+msgstr ""
+
+#: amana/templates/HtmlMacros.html:243
+msgid "Apartments_Rent"
+msgstr ""
+
+#: amana/templates/HtmlMacros.html:244
+msgid "Villas_Rent"
+msgstr ""
+
+#: amana/templates/HtmlMacros.html:245
+msgid "Villas_Sale"
+msgstr ""
+
+#: amana/templates/HtmlMacros.html:246
+msgid "Commercial_rent"
+msgstr ""
+
+#: amana/templates/layout.html:39
+msgid "Home"
+msgstr "الرئيسية"
+
+#: amana/templates/layout.html:40
+msgid "About us"
+msgstr "من نحن"
+
+#: amana/templates/layout.html:41
+msgid "Services"
+msgstr "خدماتنا الأساسية"
+
+#: amana/templates/layout.html:42
+msgid "News"
+msgstr "الأخبار"
+
+#: amana/templates/layout.html:43
+msgid "LHP"
+msgstr "علاج البواسير بالليزر"
+
+#: amana/templates/layout.html:44
+msgid "Contact"
+msgstr "تواصل معنا"
+

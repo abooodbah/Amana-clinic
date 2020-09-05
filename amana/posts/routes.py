@@ -2,12 +2,12 @@ from flask import (render_template, url_for, flash,
                    redirect, request, abort, Blueprint)
 from flask_login import current_user, login_required
 from amana import db
-from amana.models import Post,Service
+from amana.models import Service
 from amana.posts.forms import PostForm, ServiceForm
 
 posts = Blueprint('posts', __name__)
 
-
+'''
 @posts.route("/post/new", methods=['GET', 'POST'])
 @login_required
 def new_post():
@@ -71,6 +71,6 @@ def delete_post(post_id):
     db.session.commit()
     flash('Your post has been deleted!', 'success')
     return redirect(url_for('main.home'))
-
+'''
 
 

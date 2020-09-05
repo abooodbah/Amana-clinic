@@ -16,7 +16,6 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(120), unique=True, nullable=False)
     image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
     password = db.Column(db.String(60), nullable=False)
-    posts = db.relationship('Post', backref='author', lazy=True)
 
     def get_reset_token(self, expires_sec=1800):
         s = Serializer(current_app.config['SECRET_KEY'], expires_sec)
@@ -33,17 +32,6 @@ class User(db.Model, UserMixin):
 
     def __repr__(self):
         return f"User('{self.username}', '{self.email}', '{self.image_file}')"
-
-
-class Post(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(100), nullable=False)
-    date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-    content = db.Column(db.Text, nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-
-    def __repr__(self):
-        return f"Post('{self.title}', '{self.date_posted}')"
 
 
 class FAQ(db.Model):
@@ -68,9 +56,23 @@ class NewsPost(db.Model):
 class Service(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
+    title_Font_size = db.Column(db.Integer, nullable=False, default=18)
+    image_file = db.Column(db.String(20), nullable=False, default=18)
+    content = db.Column(db.Text, nullable=False)
+    content_Font_size = db.Column(db.Integer, nullable=False)
+
+    def __repr__(self):
+        return f"Post('{self.title}', '{self.date_posted}')"
+
+
+class Information_and_Records(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    Introduction = db.Column(db.Text, nullable=False)
+    Introduction_en = db.Column(db.Text, nullable=False)
+    phonenumber = db.Column(db.Integer, nullable=False)
+    email = db.Column(db.Text, nullable=False)
     image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
     content = db.Column(db.Text, nullable=False)
 
     def __repr__(self):
         return f"Post('{self.title}', '{self.date_posted}')"
-

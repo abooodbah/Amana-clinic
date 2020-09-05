@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700');
 
 body {
     color: #404040;
     font-size: 16px;
     line-height: 1.8;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Segoe UI light', sans-serif;
 }
 
 img {
@@ -164,7 +163,8 @@ transition: .5s ease-in-out;
 }
 
 .site-navigation ul li {
-    margin: 0 24px;
+    margin-left: 12px;
+    margin-right: 12px;
 }
 
 .site-navigation ul li a {
@@ -983,6 +983,11 @@ ul.tabs-nav .tab-nav.active {
     }
 }
 
+@media screen and (min-width: 992px){
+li.mobile {
+display: none;
+}
+}
 .testimonial-slider .swiper-pagination-bullet {
     width: 52px;
     height: 52px;
@@ -1123,7 +1128,7 @@ ul.tabs-nav .tab-nav.active {
     color: #18a3eb;
 }
 
-.breadcrumbs li::after {
+.breadcrumbs li::before {
     content: "/";
     position: absolute;
     top: 0;

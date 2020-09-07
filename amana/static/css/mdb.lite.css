@@ -7756,7 +7756,7 @@ table.table a.btn.btn-discord {
   color: rgba(0, 0, 0, 0.6);
   line-height: 32px;
   padding: 0 12px;
-  border-radius: 16px;
+  border-radius: 3px!important;
   background-color: #eceff1;
   margin-bottom: 1rem;
   margin-right: 1rem;

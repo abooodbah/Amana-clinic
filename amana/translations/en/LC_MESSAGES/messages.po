@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-09-05 13:08+0400\n"
+"POT-Creation-Date: 2020-09-07 21:38+0400\n"
 "PO-Revision-Date: 2020-09-05 13:05+0400\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -18,125 +18,246 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: amana/templates/HtmlMacros.html:28
-msgid "ID_Studio"
-msgstr ""
-
-#: amana/templates/HtmlMacros.html:30
-msgid "ID_undisclosed"
-msgstr ""
-
-#: amana/templates/HtmlMacros.html:68 amana/templates/HtmlMacros.html:205
-msgid "nav_ID_3_1"
-msgstr ""
-
-#: amana/templates/HtmlMacros.html:69
-msgid "nav_ID_4_1"
-msgstr ""
-
-#: amana/templates/HtmlMacros.html:71 amana/templates/HtmlMacros.html:204
-msgid "nav_ID_3_2"
-msgstr ""
-
-#: amana/templates/HtmlMacros.html:72 amana/templates/HtmlMacros.html:203
-msgid "nav_ID_4_2"
-msgstr ""
-
-#: amana/templates/HtmlMacros.html:74
-msgid "nav_ID_3_3"
-msgstr ""
-
-#: amana/templates/HtmlMacros.html:80
-msgid "Milage"
-msgstr ""
-
-#: amana/templates/HtmlMacros.html:107
-msgid "Bedrooms"
-msgstr ""
-
-#: amana/templates/HtmlMacros.html:112
-msgid "Bathrooms"
-msgstr ""
-
-#: amana/templates/HtmlMacros.html:117
-msgid "Area"
-msgstr ""
-
-#: amana/templates/HtmlMacros.html:189
-msgid "Quick_Links"
-msgstr ""
-
-#: amana/templates/HtmlMacros.html:200
-msgid "For_you"
-msgstr ""
-
-#: amana/templates/HtmlMacros.html:214
-msgid "Popular_Semsar_Cars"
-msgstr ""
-
-#: amana/templates/HtmlMacros.html:216
-msgid "Cars_Sale"
-msgstr ""
-
-#: amana/templates/HtmlMacros.html:217
-msgid "Cars_Sale_dubai"
-msgstr ""
-
-#: amana/templates/HtmlMacros.html:218
-msgid "Cars_Sale_Abudhabi"
-msgstr ""
-
-#: amana/templates/HtmlMacros.html:219
-msgid "All Categories"
-msgstr ""
-
-#: amana/templates/HtmlMacros.html:227 amana/templates/HtmlMacros.html:230
-#: amana/templates/HtmlMacros.html:231 amana/templates/HtmlMacros.html:232
-#: amana/templates/HtmlMacros.html:233
-msgid "Popular_Semsar_Phones"
-msgstr ""
-
-#: amana/templates/HtmlMacros.html:241
-msgid "Popular_Semsar_Property"
-msgstr ""
-
-#: amana/templates/HtmlMacros.html:243
-msgid "Apartments_Rent"
-msgstr ""
-
-#: amana/templates/HtmlMacros.html:244
-msgid "Villas_Rent"
-msgstr ""
-
-#: amana/templates/HtmlMacros.html:245
-msgid "Villas_Sale"
-msgstr ""
-
-#: amana/templates/HtmlMacros.html:246
-msgid "Commercial_rent"
-msgstr ""
-
-#: amana/templates/layout.html:39
-msgid "Home"
-msgstr ""
-
-#: amana/templates/layout.html:40
-msgid "About us"
-msgstr ""
-
-#: amana/templates/layout.html:41
+#: amana/templates/Service.html:6 amana/templates/Service.html:11
+#: amana/templates/layout.html:41 amana/templates/layout.html:53
+#: amana/templates/layout.html:137
 msgid "Services"
 msgstr ""
 
-#: amana/templates/layout.html:42
+#: amana/templates/Service.html:10 amana/templates/about.html:10
+#: amana/templates/contact.html:10 amana/templates/layout.html:39
+#: amana/templates/layout.html:51 amana/templates/layout.html:135
+msgid "Home"
+msgstr ""
+
+#: amana/templates/Service.html:74 amana/templates/Service.html:77
+#: amana/templates/Service.html:109 amana/templates/contact.html:86
+#: amana/templates/contact.html:89 amana/templates/contact.html:121
+#: amana/templates/mainxx.html:99 amana/templates/mainxx.html:102
+#: amana/templates/mainxx.html:134
+msgid "Book an Appointment"
+msgstr "Book an Appointment"
+
+#: amana/templates/Service.html:81 amana/templates/contact.html:93
+#: amana/templates/mainxx.html:106
+msgid "Choose Service"
+msgstr ""
+
+#: amana/templates/Service.html:86 amana/templates/contact.html:98
+#: amana/templates/mainxx.html:111
+msgid "consultation"
+msgstr ""
+
+#: amana/templates/Service.html:90 amana/templates/contact.html:35
+#: amana/templates/contact.html:102 amana/templates/mainxx.html:115
+msgid "name"
+msgstr ""
+
+#: amana/templates/Service.html:93 amana/templates/contact.html:105
+#: amana/templates/layout.html:124 amana/templates/mainxx.html:118
+msgid "Phone"
+msgstr ""
+
+#: amana/templates/Service.html:99 amana/templates/contact.html:39
+#: amana/templates/contact.html:111 amana/templates/layout.html:125
+#: amana/templates/mainxx.html:124
+msgid "Email"
+msgstr ""
+
+#: amana/templates/Service.html:107 amana/templates/contact.html:47
+#: amana/templates/contact.html:119 amana/templates/mainxx.html:132
+msgid "Message"
+msgstr "Message  (note that we will conatct you for confirmation)"
+
+#: amana/templates/Service.html:130 amana/templates/contact.html:142
+#: amana/templates/mainxx.html:155
+msgid "What we do At Amana Clinic"
+msgstr ""
+
+#: amana/templates/Service.html:136 amana/templates/Service.html:180
+#: amana/templates/contact.html:148 amana/templates/contact.html:192
+#: amana/templates/mainxx.html:19 amana/templates/mainxx.html:41
+#: amana/templates/mainxx.html:63 amana/templates/mainxx.html:161
+#: amana/templates/mainxx.html:205 amana/templates/mainxx.html:239
+#: amana/templates/mainxx.html:332
+msgid "read more"
+msgstr ""
+
+#: amana/templates/Service.html:154 amana/templates/contact.html:166
+#: amana/templates/mainxx.html:179
+msgid "Opening hours"
+msgstr ""
+
+#: amana/templates/Service.html:156 amana/templates/contact.html:168
+#: amana/templates/mainxx.html:181
+msgid "Sunday - Thursday"
+msgstr ""
+
+#: amana/templates/Service.html:165 amana/templates/contact.html:177
+#: amana/templates/mainxx.html:190
+msgid "Saturday"
+msgstr ""
+
+#: amana/templates/Service.html:174 amana/templates/contact.html:186
+#: amana/templates/mainxx.html:199
+msgid "Friday"
+msgstr ""
+
+#: amana/templates/Service.html:176 amana/templates/contact.html:188
+#: amana/templates/mainxx.html:201
+msgid "CLOSED"
+msgstr ""
+
+#: amana/templates/about.html:6 amana/templates/about.html:11
+#: amana/templates/layout.html:40 amana/templates/layout.html:52
+#: amana/templates/layout.html:136
+msgid "About us"
+msgstr ""
+
+#: amana/templates/about.html:27
+msgid "Amana_Clinic"
+msgstr ""
+
+#: amana/templates/about.html:45
+msgid "Faq"
+msgstr ""
+
+#: amana/templates/contact.html:6 amana/templates/contact.html:11
+#: amana/templates/layout.html:44 amana/templates/layout.html:56
+#: amana/templates/layout.html:120 amana/templates/layout.html:138
+msgid "Contact"
+msgstr ""
+
+#: amana/templates/contact.html:31
+msgid "Get in Touch"
+msgstr ""
+
+#: amana/templates/contact.html:43
+msgid "Subject"
+msgstr ""
+
+#: amana/templates/contact.html:53
+msgid "Send Message"
+msgstr ""
+
+#: amana/templates/layout.html:42 amana/templates/layout.html:54
+#: amana/templates/layout.html:139
 msgid "News"
 msgstr ""
 
-#: amana/templates/layout.html:43
+#: amana/templates/layout.html:43 amana/templates/layout.html:55
 msgid "LHP"
 msgstr ""
 
-#: amana/templates/layout.html:44
-msgid "Contact"
+#: amana/templates/layout.html:123
+msgid "Address"
 msgstr ""
+
+#: amana/templates/layout.html:132
+msgid "Usefull Links"
+msgstr ""
+
+#: amana/templates/layout.html:140
+msgid "FAQ"
+msgstr ""
+
+#: amana/templates/mainxx.html:223
+msgid "Our Services"
+msgstr ""
+
+#: amana/templates/mainxx.html:256
+msgid "Medical Staff"
+msgstr ""
+
+#: amana/templates/mainxx.html:271
+msgid "dr_info"
+msgstr ""
+"Dr. Tamim Saqr is a specialist in general surgery. With 20 years of "
+"experience in the field of surgery between hospitals in the United States"
+" of America, Britain and Abu Dhabi. He graduated in 1994 after studying "
+"medicine in Syria."
+
+#: amana/templates/mainxx.html:279
+msgid "Dr. Tamim Saqr"
+msgstr ""
+
+#: amana/templates/mainxx.html:279
+msgid "USA, UK, UAE, Syria."
+msgstr ""
+
+#: amana/templates/mainxx.html:298
+msgid "The News"
+msgstr ""
+
+#~ msgid "ID_Studio"
+#~ msgstr ""
+
+#~ msgid "ID_undisclosed"
+#~ msgstr ""
+
+#~ msgid "nav_ID_3_1"
+#~ msgstr ""
+
+#~ msgid "nav_ID_4_1"
+#~ msgstr ""
+
+#~ msgid "nav_ID_3_2"
+#~ msgstr ""
+
+#~ msgid "nav_ID_4_2"
+#~ msgstr ""
+
+#~ msgid "nav_ID_3_3"
+#~ msgstr ""
+
+#~ msgid "Milage"
+#~ msgstr ""
+
+#~ msgid "Bedrooms"
+#~ msgstr ""
+
+#~ msgid "Bathrooms"
+#~ msgstr ""
+
+#~ msgid "Area"
+#~ msgstr ""
+
+#~ msgid "Quick_Links"
+#~ msgstr ""
+
+#~ msgid "For_you"
+#~ msgstr ""
+
+#~ msgid "Popular_Semsar_Cars"
+#~ msgstr ""
+
+#~ msgid "Cars_Sale"
+#~ msgstr ""
+
+#~ msgid "Cars_Sale_dubai"
+#~ msgstr ""
+
+#~ msgid "Cars_Sale_Abudhabi"
+#~ msgstr ""
+
+#~ msgid "All Categories"
+#~ msgstr ""
+
+#~ msgid "Popular_Semsar_Phones"
+#~ msgstr ""
+
+#~ msgid "Popular_Semsar_Property"
+#~ msgstr ""
+
+#~ msgid "Apartments_Rent"
+#~ msgstr ""
+
+#~ msgid "Villas_Rent"
+#~ msgstr ""
+
+#~ msgid "Villas_Sale"
+#~ msgstr ""
+
+#~ msgid "Commercial_rent"
+#~ msgstr ""
 

@@ -16,7 +16,7 @@
                           </div><!-- .entry-content -->
 
                           <footer class="entry-footer d-flex flex-wrap align-items-center mt-4">
-                              <a href="#" class="button gradient-bg" style="color: white!important;">Read More</a>
+                              <a href="#" class="button gradient-bg" style="color: white!important;">{{_('read more')}}</a>
                           </footer><!-- .entry-footer -->
                       </div><!-- .col -->
                   </div><!-- .row -->
@@ -38,7 +38,7 @@
                           </div><!-- .entry-content -->
 
                           <footer class="entry-footer d-flex flex-wrap align-items-center mt-4">
-                              <a href="#" class="button gradient-bg">Read More</a>
+                              <a href="#" class="button gradient-bg">{{_('read more')}}</a>
                           </footer><!-- .entry-footer -->
                       </div><!-- .col -->
                   </div><!-- .row -->
@@ -60,7 +60,7 @@
                           </div><!-- .entry-content -->
 
                           <footer class="entry-footer d-flex flex-wrap align-items-center mt-4">
-                              <a href="#" class="button gradient-bg">Read More</a>
+                              <a href="#" class="button gradient-bg">{{_('read more')}}</a>
                           </footer><!-- .entry-footer -->
                       </div><!-- .col -->
                   </div><!-- .row -->
@@ -80,145 +80,147 @@
 <main role="main" class="container mb-0 mt-0" >
 <div class="row">
 
-  <section>
-    <div class="container-fluid white lighten-4 mb-0 mt-0 ">
-      <div class="container mb-0 mt-0">
-
-        <div class="row mt-5 pt-3">
-
-          <div class="col-lg-4 col-md-12 d-flex align-items-stretch">
-            <!-- Booking card -->
-<div class="card booking-card card mt-2 mb-4" style="width: inherit;">
-
- 
-
-  <!-- Card content -->
-  <div class="card-body">
-    <form class="">
-
-      <p class="h4 mb-4 text-center">Contact us</p>
-  
-  
-      <label for="defaultSelect">Book an Appointment</label>
-      <select id="defaultSelect" class="browser-default custom-select mb-4">
-          <option value="" disabled="">Choose option</option>
-          
-          {%for service in Services%}
-          <option value="{{service.id}}" selected="">{{service.title}}</option>
-          {% endfor %}
-          <option value="1" selected="">consultation</option>
-      </select>
-  
+    <section>
+        <div class="container-fluid white lighten-4 mb-0 mt-0 " style="max-width: 100vw;">
+          <div class="container mb-0 mt-0">
+    
+            <div class="row mt-5 pt-3">
+    
+              <div class="col-lg-12 col-md-12 d-flex align-items-stretch">
+                <!-- Booking card -->
+    <div class="card booking-card card mt-2 mb-4" style="width: inherit;">
+    
+     
+    
+      <!-- Card content -->
+      <div class="card-body" style="{{add_style_if_ar('direction: rtl;text-align: right;', 'direction: ltr;text-align: left;')}}">
+        <form class="">
+    
+          <p class="h4 mb-4 text-center">{{_('Book an Appointment')}}</p>
       
-      <input type="text" id="textInput" class="form-control mb-4" placeholder="Phone number">
-
-      <input type="text" id="textInput" class="form-control mb-4" placeholder="Email address">
-
-      <input type="date" id="start" name="trip-start"
-       value="2018-07-22"
-       min="2018-01-01" max="2018-12-31" class="form-control mb-4" style="display: flex;">
-  
-      <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Message"></textarea>
-  
-      <input class="button gradient-bg button gradient-bg ml-3 mt-3 mb-2" type="submit" value="BooK Appoitnment" style="width: -webkit-fill-available;">  </form>
-  </div>
-
-</div>
-<!-- Booking card -->
-            </div>
-            
-
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-
-              <!-- Booking card -->
-  <div class="card booking-card mt-2 mb-4">
-
-    <!-- Card image -->
-    <div class="view overlay">
-      <img src="{{ url_for('static', filename='img/placeholder2.jpg') }}" class="card-img-top" alt="">
-      <a href="#!">
-        <div class="mask rgba-white-slight"></div>
-      </a>
-    </div>
-
-    <!-- Card content -->
-    <div class="card-body">
-
-      <!-- Title -->
-      <h4 class="card-title font-weight-bold mb-4"><a>What we do At Amana Clinic</a></h4>
-      <!-- Data -->
-
-      <!-- Text -->
-      <p class="card-text">An Abudhabi Based clinic specialized in treating various anal related diseases utilizing the latest international medical methods.</p>
-      <footer class="entry-footer">
-        <a href="#">read more</a>
-    </footer>
-    </div>
-
-  </div>
-  <!-- Booking card -->
-            </div>
-
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-
-              <!-- Booking card -->
-  <div class="card booking-card mt-2 mb-4 ">
-
-    <!-- Card image -->
-    <div class="view overlay">
-      <img src="{{ url_for('static', filename='img/placeholder.jpg') }}" class="card-img-top" alt="">
-      <a href="#!">
-        <div class="mask rgba-white-slight"></div>
-      </a>
-    </div>
-
-    <!-- Card content -->
-    <div class="card-body">
-      <p class="h5 font-weight-bold mb-4">Opening hours</p>
-      <ul class="list-unstyled d-flex justify-content-start mb-0">
-        <li style="font-size: 10pt;">Sunday - Thursday</li>
-        <li>
-          <div class="chip ml-3">5:00pM</div>
-        </li>
-        <li>
-          <div class="chip ml-0 mr-0">10:00AM</div>
-        </li>
-      </ul>
-      <ul class="list-unstyled d-flex justify-content-start mb-0">
-        <li style="font-size: 10pt;">Saturday</li>
-        <li>
-          <div class="chip ml-3">9:00AM</div>
-        </li>
-        <li>
-          <div class="chip ml-0 mr-0">7:00PM</div>
-        </li>
-      </ul>
-      <ul class="list-unstyled d-flex justify-content-start mb-0">
-        <li style="font-size: 10pt;">Friday</li>
-        <li>
-          <div class="chip ml-3">CLOSED</div>
-        </li>
-      </ul>
-      <footer class="entry-footer">
-        <a href="#">read more</a>
-    </footer>
-    </div>
-
-  </div>
-  <!-- Booking card -->
-            </div>
-
+      
+          <label for="defaultSelect">{{_('Book an Appointment')}}</label>
+          <div class="row">
+          <div class="col-12  col-md-4">
+          <select id="defaultSelect" class="browser-default custom-select mb-4 booking-form-field booking-form-field">
+              <option value="" disabled="">{{_('Choose Service')}}</option>
+              
+              {%for service in Services%}
+              <option value="{{service.id}}" selected="">{{service.title}}</option>
+              {% endfor %}
+              <option value="1" selected="">{{_('consultation')}}</option>
+          </select>
         </div>
+        <div class="col-12  col-md-4">
+          <input type="text" id="textInput" class="form-control mb-4 booking-form-field" placeholder="{{_('name')}}">
+    </div>
+          <div class="col-12  col-md-4">
+          <input type="text" id="textInput" class="form-control mb-4 booking-form-field" placeholder="{{_('Phone')}}">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12  col-md-6">
+    
+          <input type="text" id="textInput" class="form-control mb-4 booking-form-field" placeholder="{{_('Email')}}">
+        </div>
+        <div class="col-12  col-md-6">
+          <input type="date" id="start" name="trip-start"
+           value="2018-07-22"
+           min="2018-01-01" max="2018-12-31" class="form-control mb-4 booking-form-field" style="display: flex;">
+          </div>
+          </div>
+          <textarea class="form-control rounded-0 booking-form-field" id="exampleFormControlTextarea2" rows="3" placeholder="{{_('Message')}}"></textarea>
+      
+          <input class="button gradient-bg button gradient-bg ml-3 mt-3 mb-2" type="submit" value="{{_('Book an Appointment')}}" style="width: -webkit-fill-available;">  
+        </form>
       </div>
+    
+    </div>
+    <!-- Booking card -->
+                </div>
+                
+    
+                <div class="col-lg-6 col-md-6 d-flex align-items-stretch">
+    
+                  <!-- Booking card -->
+      <div class="card booking-card mt-2 mb-4" style="width: -moz-available;width: -webkit-fill-available; " >
+    
+        <!-- Card image -->    
+    
+    
+        <!-- Card content -->
+        <div class="card-body" style="{{add_style_if_ar('direction: rtl;text-align: right;', 'direction: ltr;text-align: left;')}}">
+    
+          <!-- Title -->
+          <h4 class="card-title font-weight-bold mb-4"><a>{{_('What we do At Amana Clinic')}}</a></h4>
+          <!-- Data -->
+    
+          <!-- Text -->
+          <p class="card-text">{{add_style_if_ar(info.Introduction, info.Introduction_en)}}</p>
+          <footer class="entry-footer">
+            <a href="#">{{_('read more')}}</a>
+        </footer>
+        </div>
+    
       </div>
-      </section>
+      <!-- Booking card -->
+                </div>
+    
+                <div class="col-lg-6 col-md-6 d-flex align-items-stretch">
+    
+                  <!-- Booking card -->
+      <div class="card booking-card mt-2 mb-4 " style="width: -moz-available;width: -webkit-fill-available; ">
+    
+        <!-- Card image -->
+    
+    
+        <!-- Card content -->
+        <div class="card-body" style="{{add_style_if_ar('direction: rtl;text-align: right;', 'direction: ltr;text-align: left;')}}">
+          <p class="h5 font-weight-bold mb-4">{{_('Opening hours')}}</p>
+          <ul class="list-unstyled d-flex justify-content-start mb-0">
+            <li style="font-size: 10pt;">{{_('Sunday - Thursday')}}</li>
+            <li>
+              <div class="chip ml-3">5:00pM</div>
+            </li>
+            <li>
+              <div class="chip ml-0 mr-0">10:00AM</div>
+            </li>
+          </ul>
+          <ul class="list-unstyled d-flex justify-content-start mb-0">
+            <li style="font-size: 10pt;">{{_('Saturday')}}</li>
+            <li>
+              <div class="chip ml-3">9:00AM</div>
+            </li>
+            <li>
+              <div class="chip ml-0 mr-0">7:00PM</div>
+            </li>
+          </ul>
+          <ul class="list-unstyled d-flex justify-content-start mb-0">
+            <li style="font-size: 10pt;">{{_('Friday')}}</li>
+            <li>
+              <div class="chip ml-3">{{_('CLOSED')}}</div>
+            </li>
+          </ul>
+          <footer class="entry-footer">
+            <a href="#">{{_('read more')}}</a>
+        </footer>
+        </div>
+    
+      </div>
+      <!-- Booking card -->
+                </div>
+    
+            </div>
+          </div>
+          </div>
+          </section>
 
-      <div class="our-departments">
+      <div class="our-departments" style="width: -moz-available;width: -webkit-fill-available; ">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="our-departments-wrap">
-                        <h2>Our Services</h2>
+                        <h2>{{_('Our Services')}}</h2>
                         
 
                         <div class="row">
@@ -234,7 +236,7 @@
                                     </div>
 
                                     <footer class="entry-footer">
-                                        <a href="#">read more</a>
+                                        <a href="#">{{_('read more')}}</a>
                                     </footer>
                                 </div>
                             </div>
@@ -251,7 +253,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2>Medical Staff</h2>
+                    <h2>{{_('Medical Staff')}}</h2>
                 </div>
             </div>
         </div>
@@ -262,11 +264,11 @@
                 <div class="row">
                     <div class="col-12 col-lg-9">
                         <div class="testimonial-bg-shape">
-                            <div class="swiper-container testimonial-slider-wrap">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
+                            <div class="swiper-container testimonial-slider-wrap" style="{{add_style_if_ar('direction: rtl;text-align: right;', 'direction: ltr;text-align: left;')}}">
+                                <div class="">
+                                    <div class="">
                                         <div class="entry-content">
-                                            <p>Dr. Tamim Saqr is a specialist in general surgery. With 20 years of experience in the field of surgery between hospitals in the United States of America, Britain and Abu Dhabi. He graduated in 1994 after studying medicine in Syria.</p>
+                                            <p>{{_('dr_info')}}</p>
                                         </div><!-- .entry-content -->
 
                                         <div class="entry-footer">
@@ -274,20 +276,11 @@
                                                 <img src="static/img/doctor-square.jpg" alt="">
                                             </figure><!-- .user-avatar -->
 
-                                            <h3 class="testimonial-user">Dr. Tamim Saqr <span>USA, UK, UAE, Syria.</span></h3>
+                                            <h3 class="testimonial-user">{{_('Dr. Tamim Saqr')}} <span>{{_('USA, UK, UAE, Syria.')}}</span></h3>
                                         </div><!-- .entry-footer -->
                                     </div><!-- .swiper-slide -->
                                 </div><!-- .swiper-wrapper -->
 
-                                <div class="swiper-pagination-wrap">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="swiper-pagination position-relative flex justify-content-center align-items-center"></div>
-                                            </div><!-- .col -->
-                                        </div><!-- .row -->
-                                    </div><!-- .container -->
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -298,11 +291,11 @@
 
 
 
-    <div class="the-news">
-      <div class="container">
+    <div class="the-news" style="{{add_style_if_ar('direction: rtl;text-align: right;width: -webkit-fill-available;', 'direction: ltr;text-align: left;')}}">
+      <div class="container" >
           <div class="row">
-              <div class="col-12">
-                  <h2>The News</h2>
+              <div class="col-12" >
+                  <h2 >{{_('The News')}}</h2>
 
                   <div class="row">
                     {%for newspost in news%}
@@ -336,7 +329,7 @@
                             </div>
                         </div>
                         <footer class="entry-footer">
-                          <a href="#">read more</a>
+                          <a href="#">{{_('read more')}}</a>
                       </footer>
                       </div>
                     </div>

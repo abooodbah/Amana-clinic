@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/swiper.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/swiper.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
 
     <link rel="stylesheet" href="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.css">
 
@@ -24,7 +25,7 @@
     {% if title %}
         <title>Flask Blog - {{ title }}</title>
     {% else %}
-        <title>Flask Blog</title>
+        <title>{{add_style_if_ar('عيادة أمانة','Amana Clinic')}}</title>
     {% endif %}
 </head>
 <body>
@@ -36,31 +37,34 @@
                     <div class="site-branding site-navigation d-flex align-items-center">
                        <a class="d-block" href="index.html" rel="home"><img class="d-block" src="static/img/loog new-3.png" alt="logo" style="width: 75px;;"></a>
                        <ul class="d-flex flex-column flex-lg-row justify-content-lg-end align-items-center">
-                        <li class="current-menu-item"><a href="{{url_for('main.test')}}">{{_('Home')}}</a></li>
-                        <li><a href="{{url_for('main.about')}}">{{_('About us')}}</a></li>
-                        <li><a href="{{url_for('main.services')}}">{{_('Services')}}</a></li>
-                        <li><a href="news.html">{{_('News')}}</a></li>
+                        <li class="current-menu-item"><a href="{{url_for('main.test', locale = request.args.get('locale'))}}">{{_('Home')}}</a></li>
+                        <li><a href="{{url_for('main.about', locale = request.args.get('locale'))}}">{{_('About us')}}</a></li>
+                        <li><a href="{{url_for('main.services', locale = request.args.get('locale'))}}">{{_('Services')}}</a></li>
+                        <li><a href="{{url_for('main.about', locale = request.args.get('locale'))}}">{{_('News')}}</a></li>
                         <li><a href="news.html">{{_('LHP')}}</a></li>
-                        <li><a href="{{url_for('main.contact')}}">{{_('Contact')}}</a></li>
+                        <li><a href="{{url_for('main.contact', locale = request.args.get('locale'))}}">{{_('Contact')}}</a></li>
                         </ul>
                     
                     </div><!-- .site-branding -->
 
                     <nav class="site-navigation d-flex justify-content-end align-items-center">
                         <ul class="d-flex flex-column flex-lg-row justify-content-lg-end align-items-center">
-                            <li class="mobile"><a href="{{url_for('main.test')}}">{{_('Home')}}</a></li>
-                            <li class="mobile"><a href="{{url_for('main.about')}}">{{_('About us')}}</a></li>
-                            <li class="mobile"><a href="{{url_for('main.services')}}">{{_('Services')}}</a></li>
+                            <li class="mobile"><a href="{{url_for('main.test', locale = request.args.get('locale'))}}">{{_('Home')}}</a></li>
+                            <li class="mobile"><a href="{{url_for('main.about', locale = request.args.get('locale'))}}">{{_('About us')}}</a></li>
+                            <li class="mobile"><a href="{{url_for('main.services', locale = request.args.get('locale'))}}">{{_('Services')}}</a></li>
                             <li class="mobile"><a href="news.html">{{_('News')}}</a></li>
                             <li class="mobile"><a href="news.html">{{_('LHP')}}</a></li>
-                            <li class="mobile"><a href="{{url_for('main.contact')}}">{{_('Contact')}}</a></li>
+                            <li class="mobile"><a href="{{url_for('main.contact', locale = request.args.get('locale'))}}">{{_('Contact')}}</a></li>
                             <li class="call-btn button gradient-bg mt-3 mt-md-0" style="direction: ltr;">
                                 <a class="d-flex justify-content-center align-items-center" style="font-family: Segoe UI light;" href="tel:+97126228660"><img src="static/img/phone.svg" style=" width: 25px; filter: invert(100%); "> 02 622 8660</a>
                             </li>
                             
-                            <li style="margin: 0px;">
-                                <a class="d-flex justify-content-center align-items-center pt-0 pb-0" style="font-family: system-ui;" href="https://wa.me/971503153009"><img src="static/img/whatsapp.png" style=" width: 50px;"></a>
+                            <li style="margin: 0px; display: inline-flex;">
+                                <a class="d-flex justify-content-center align-items-center pt-0 pb-0" style="font-family: system-ui;" href="https://wa.me/971503153009"><img src="static/img/whatsapp.png" style=" width: 60px;"></a>
+                                <a class="d-flex justify-content-center align-items-center pt-0 pb-0" style="font-family: system-ui;" href="{{url_for(request.endpoint) + '?locale=' +add_style_if_ar('en','ar')}}"><img src="static/img/{{add_style_if_ar('en', 'ar')}}.svg" style=" width: 40px;"></a>
                             </li>
+
+  
                         </ul>
                     </nav><!-- .site-navigation -->
 
@@ -117,9 +121,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                           <h2>{{_('Contact')}}</h2>
 
                           <ul class="p-0 m-0">
-                              <li><span>Addtress:</span>Corniche Rd W - Al Markaziyah West - Abu Dhabi</li>
-                              <li><span>Phone:</span>02 622 8660</li>
-                              <li><span>Email:</span><a href="mailto:Aamana_clinic@hotmail.com">Aamana_clinic@hotmail.com</a></li>
+                              <li><span>{{_('Address')}}:</span>Corniche Rd W - Al Markaziyah West - Abu Dhabi</li>
+                              <li><span>{{_('Phone')}}:</span><div style="direction: ltr;"> 02 622 8660</div></li>
+                              <li><span>{{_('Email')}}:</span><a href="mailto:Aamana_clinic@hotmail.com">Aamana_clinic@hotmail.com</a></li>
                           </ul>
                       </div>
                   </div><!-- .col -->
@@ -129,12 +133,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                           <h2>{{_('Usefull Links')}}</h2>
 
                           <ul class="p-0 m-0">
-                              <li><a href="{{url_for('main.test')}}">{{_('Home')}}</a></li>
-                              <li><a href="{{url_for('main.about')}}">{{_('About us')}}</a></li>
-                              <li><a href="{{url_for('main.services')}}">{{_('Services')}}</a></li>
-                              <li><a href="{{url_for('main.contact')}}">{{_('Contact')}}</a></li>
-                              <li><a href="{{url_for('main.contact')}}">{{_('News')}}</a></li>
-                              <li><a href="{{url_for('main.contact')}}">{{_('FAQ')}}</a></li>
+                              <li><a href="{{url_for('main.test', locale = request.args.get('locale'))}}">{{_('Home')}}</a></li>
+                              <li><a href="{{url_for('main.about', locale = request.args.get('locale'))}}">{{_('About us')}}</a></li>
+                              <li><a href="{{url_for('main.services', locale = request.args.get('locale'))}}">{{_('Services')}}</a></li>
+                              <li><a href="{{url_for('main.contact', locale = request.args.get('locale'))}}">{{_('Contact')}}</a></li>
+                              <li><a href="{{url_for('main.contact', locale = request.args.get('locale'))}}">{{_('News')}}</a></li>
+                              <li><a href="{{url_for('main.contact', locale = request.args.get('locale'))}}">{{_('FAQ')}}</a></li>
                           </ul>
                       </div><!-- .foot-links -->
                   </div><!-- .col -->

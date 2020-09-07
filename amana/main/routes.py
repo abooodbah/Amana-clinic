@@ -14,14 +14,14 @@ def home():
 
 @main.route("/contact")
 def contact():
-
-    return render_template('contact.html')
+    info = Information_and_Records.query.first()
+    return render_template('contact.html',info = info)
 
 @main.route("/test")
 def test():
     page = request.args.get('page', 1, type=int)
     news = NewsPost.query.all()
-    FAQs = FAQ.query.order_by()
+    FAQs = FAQ.query
     info = Information_and_Records.query.first()
     Services = Service.query.all()
     return render_template('mainxx.html', news = news[-3:], FAQs = FAQs, Services = Services, posts =True, slider= True,info = info)
@@ -30,10 +30,18 @@ def test():
 @main.route("/about")
 def about():
     info = Information_and_Records.query.first()
-    return render_template('about.html', title='About', info = info)
+    FAQs = FAQ.query
+    return render_template('about.html', title='About', info = info, FAQ= FAQs)
 
 
 @main.route("/Services")
 def services():
+    info = Information_and_Records.query.first()
     Services = Service.query.all()
-    return render_template('Service.html', title='Service', legend='New Service', Services = Services)
+    return render_template('Service.html', title='Service', legend='New Service', Services = Services,info = info)
+
+@main.route("/news")
+def news():
+    info = Information_and_Records.query.first()
+    Services = Service.query.all()
+    return render_template('Service.html', title='Service', legend='New Service', Services = Services,info = info)

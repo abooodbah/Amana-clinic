@@ -37,8 +37,10 @@ class User(db.Model, UserMixin):
 class FAQ(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
+    title_en = db.Column(db.String(100), nullable=False)
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     content = db.Column(db.Text, nullable=False)
+    content_en = db.Column(db.Text, nullable=False)
 
     def __repr__(self):
         return f"Post('{self.title}', '{self.date_posted}')"
@@ -46,9 +48,11 @@ class FAQ(db.Model):
 class NewsPost(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
+    title_en = db.Column(db.String(100), nullable=False)
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     image_file = db.Column(db.String(20), nullable=True, default='default.jpg')
     content = db.Column(db.Text, nullable=False)
+    content_en = db.Column(db.Text, nullable=False)
 
     def __repr__(self):
         return f"Post('{self.title}', '{self.date_posted}')"
@@ -56,9 +60,11 @@ class NewsPost(db.Model):
 class Service(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
+    title_en = db.Column(db.String(100), nullable=False)
     title_Font_size = db.Column(db.Integer, nullable=False, default=18)
     image_file = db.Column(db.String(20), nullable=False, default=18)
     content = db.Column(db.Text, nullable=False)
+    content_en = db.Column(db.Text, nullable=False)
     content_Font_size = db.Column(db.Integer, nullable=False)
 
     def __repr__(self):
@@ -72,7 +78,16 @@ class Information_and_Records(db.Model):
     phonenumber = db.Column(db.Integer, nullable=False)
     email = db.Column(db.Text, nullable=False)
     image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
-    content = db.Column(db.Text, nullable=False)
 
     def __repr__(self):
         return f"Post('{self.title}', '{self.date_posted}')"
+
+
+class Appointment(db.Model, UserMixin):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(40), nullable=False)
+    email = db.Column(db.String(120), nullable=False)
+    phone = db.Column(db.String(20), nullable=False)
+    service = db.Column(db.String(60), nullable=False)
+    date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    notes = db.Column(db.Text, nullable=True)

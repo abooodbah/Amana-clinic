@@ -122,19 +122,19 @@ msgstr ""
 
 #: amana/templates/layout.html:40
 msgid "About us"
-msgstr ""
+msgstr "حول العيادة"
 
 #: amana/templates/layout.html:41
 msgid "Services"
-msgstr ""
+msgstr "خدمات العيادة"
 
 #: amana/templates/layout.html:42
 msgid "News"
-msgstr ""
+msgstr "الأخبار"
 
 #: amana/templates/layout.html:43
 msgid "LHP"
-msgstr ""
+msgstr "Lazer Hemmorhoids cure"
 
 #: amana/templates/layout.html:44
 msgid "Contact"

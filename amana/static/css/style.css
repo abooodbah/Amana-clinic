@@ -38,7 +38,7 @@ a:hover, a:active {
     position: fixed!important;
     top: 0!important;
     width: 100%!important;
-    background: white;
+    background: white!important;
     transition: .5s ease-in-out;
     padding: 0px!important;
   }
@@ -209,7 +209,7 @@ transition: .5s ease-in-out;
         max-width: 100%;
         height: auto;
         padding: 0;
-        overflow: auto;
+        overflow: visible;
         background: transparent;
     }
 
@@ -221,6 +221,14 @@ transition: .5s ease-in-out;
 .site-navigation ul li a:hover,
 .site-navigation ul li.current-menu-item a {
     color: #18a3eb;
+}
+
+.dropdown-submenu {
+    position:relative;
+}
+.dropdown-submenu .dropdown-menu {
+    top:0;
+    left:100%;
 }
 
 /*--------------------------------------------------------------
@@ -984,9 +992,9 @@ ul.tabs-nav .tab-nav.active {
 }
 
 
-.booking-form-field{
+.boking-form-field{
     border: 0;
-    background: #f0f4f8;
+     background: #f0f4f8;
     color: #828282;
     font-family: inherit;
 }

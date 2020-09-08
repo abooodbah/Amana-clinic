@@ -291,55 +291,6 @@
 
 
 
-    <div class="the-news" style="{{add_style_if_ar('direction: rtl;text-align: right;width: -webkit-fill-available;', 'direction: ltr;text-align: left;')}}">
-      <div class="container" >
-          <div class="row">
-              <div class="col-12" >
-                  <h2 >{{_('The News')}}</h2>
-
-                  <div class="row">
-                    {%for newspost in news%}
-                    <div class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch">
-                      <div class="card card-cascade narrower" style="padding: 1rem;">
-                          <!-- Card image -->
-                            <div class="view view-cascade overlay">
-                              <img class="card-img" src="static/images/news-2.png"
-                                alt="Card image cap" style="border-radius: 0.25rem;">
-                              <a>
-                                <div class="mask rgba-white-slight"></div>
-                              </a>
-                            </div>
-                        <div class="the-news-wrap">
-                            
-
-                            <header class="entry-header">
-                                <h3>{{newspost.title}}</h3>
-
-                                <div class="post-metas d-flex flex-wrap align-items-center">
-                                    <div class="posted-date"><label>Date: </label><a href="#">April 12, 2018</a></div>
-
-                                    <div class="posted-by"><label>By: </label><a href="#">Dr. Tamim Saqr</a></div>
-
-                                    <div class="post-comments"></div>
-                                </div>
-                            </header>
-
-                            <div class="entry-content">
-                                <p>{{newspost.content}} </p>
-                            </div>
-                        </div>
-                        <footer class="entry-footer">
-                          <a href="#">{{_('read more')}}</a>
-                      </footer>
-                      </div>
-                    </div>
-                    {% endfor %}
-
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
 
 
   </main>

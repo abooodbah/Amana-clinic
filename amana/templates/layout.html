@@ -30,18 +30,32 @@
 </head>
 <body>
   <header class="site-header" style="{{'position: relative;padding: 220px 0 140px;background-color: #f0f4f8;' if not slider else ''}}">
-    <div class="nav-bar" id="mynav" style="{{add_style_if_ar('direction: rtl;text-align: right;', 'direction: ltr;text-align: left;')}}">
+    <div class="nav-bar" id="mynav" style="{{add_style_if_ar('direction: rtl;text-align: right;', 'direction: ltr;text-align: left;')}} background:#c9e9ffc6;">
         <div class="container">
             <div class="row">
                 <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
                     <div class="site-branding site-navigation d-flex align-items-center">
-                       <a class="d-block" href="index.html" rel="home"><img class="d-block" src="static/img/loog new-3.png" alt="logo" style="width: 75px;;"></a>
+                       <a class="d-block" href="index.html" rel="home"><img class="d-block" src="static/img/logo g.png" alt="logo" style="width: 75px;;"></a>
                        <ul class="d-flex flex-column flex-lg-row justify-content-lg-end align-items-center">
-                        <li class="current-menu-item"><a href="{{url_for('main.test', locale = request.args.get('locale'))}}">{{_('Home')}}</a></li>
+                        <li class="current-menu-item"><a href="{{url_for('main.home', locale = request.args.get('locale'))}}">{{_('Home')}}</a></li>
                         <li><a href="{{url_for('main.about', locale = request.args.get('locale'))}}">{{_('About us')}}</a></li>
                         <li><a href="{{url_for('main.services', locale = request.args.get('locale'))}}">{{_('Services')}}</a></li>
-                        <li><a href="{{url_for('main.about', locale = request.args.get('locale'))}}">{{_('News')}}</a></li>
-                        <li><a href="news.html">{{_('LHP')}}</a></li>
+                        <!-- Dropdown -->
+      <li class="nav-item dropdown">
+        <a class= "dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false" href="#">{{_('LHP')}}</a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class= "dropdown-item dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false" href="#">{{_('LHP')}}</a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+        </div>
+      </li>
                         <li><a href="{{url_for('main.contact', locale = request.args.get('locale'))}}">{{_('Contact')}}</a></li>
                         </ul>
                     
@@ -49,11 +63,20 @@
 
                     <nav class="site-navigation d-flex justify-content-end align-items-center">
                         <ul class="d-flex flex-column flex-lg-row justify-content-lg-end align-items-center">
-                            <li class="mobile"><a href="{{url_for('main.test', locale = request.args.get('locale'))}}">{{_('Home')}}</a></li>
+                            <li class="mobile"><a href="{{url_for('main.home', locale = request.args.get('locale'))}}">{{_('Home')}}</a></li>
                             <li class="mobile"><a href="{{url_for('main.about', locale = request.args.get('locale'))}}">{{_('About us')}}</a></li>
                             <li class="mobile"><a href="{{url_for('main.services', locale = request.args.get('locale'))}}">{{_('Services')}}</a></li>
                             <li class="mobile"><a href="news.html">{{_('News')}}</a></li>
-                            <li class="mobile"><a href="news.html">{{_('LHP')}}</a></li>
+                            <li class="mobile nav-item dropdown">
+                                <a class= "dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false" href="#">{{_('LHP')}}</a>
+                                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                                  <a class="dropdown-item" href="#">Action</a>
+                                  <a class="dropdown-item" href="#">Another action</a>
+                                  <a class="dropdown-item" href="#">Something else here</a>
+                                  
+                                </div>
+                              </li>
                             <li class="mobile"><a href="{{url_for('main.contact', locale = request.args.get('locale'))}}">{{_('Contact')}}</a></li>
                             <li class="call-btn button gradient-bg mt-3 mt-md-0" style="direction: ltr;">
                                 <a class="d-flex justify-content-center align-items-center" style="font-family: Segoe UI light;" href="tel:+97126228660"><img src="static/img/phone.svg" style=" width: 25px; filter: invert(100%); "> 02 622 8660</a>
@@ -106,7 +129,7 @@
               <div class="row">
                   <div class="col-12 col-md-6 col-lg-4">
                       <div class="foot-about">
-                          <h2><a href="#"><img src="static/img/loog new-3.png" alt="" style="width: 75px;"></a></h2>
+                          <h2><a href="#"><img src="static/img/logo g.png" alt="" style="width: 75px;"></a></h2>
 
                           <p>{{add_style_if_ar(info.Introduction, info.Introduction_en)}}</p>
 
@@ -133,7 +156,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                           <h2>{{_('Usefull Links')}}</h2>
 
                           <ul class="p-0 m-0">
-                              <li><a href="{{url_for('main.test', locale = request.args.get('locale'))}}">{{_('Home')}}</a></li>
+                              <li><a href="{{url_for('main.home', locale = request.args.get('locale'))}}">{{_('Home')}}</a></li>
                               <li><a href="{{url_for('main.about', locale = request.args.get('locale'))}}">{{_('About us')}}</a></li>
                               <li><a href="{{url_for('main.services', locale = request.args.get('locale'))}}">{{_('Services')}}</a></li>
                               <li><a href="{{url_for('main.contact', locale = request.args.get('locale'))}}">{{_('Contact')}}</a></li>

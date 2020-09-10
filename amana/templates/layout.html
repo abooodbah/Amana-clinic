@@ -46,14 +46,14 @@
                   
                             {%for Service in mainServices%}
                             {%if not Service.subservices%}
-                            <a class="dropdown-item" href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = hemorrhoids )}}">{{add_style_if_ar(Service.title_ar,Service.title_en)}}</a>
+                            <a class="dropdown-item" href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = 'main' )}}">{{add_style_if_ar(Service.title_ar,Service.title_en)}}</a>
                             {%else%}
                             <a class= "dropdown-item dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false" href="#">{{add_style_if_ar(Service.title_ar,Service.title_en)}}</a>
                             
                             <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink" style="border: #35c3f9 2px solid; border-radius: 10px;">
                               {%for subservice in Service.subservices%}
-                              <a class="dropdown-item" href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = hemorrhoids )}}">{{add_style_if_ar(subservice.title_ar,subservice.title_en)}}</a>
+                              <a class="dropdown-item" href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = 'main' )}}">{{add_style_if_ar(subservice.title_ar,subservice.title_en)}}</a>
                               {%endfor%}
                             </div>
                             {%endif%}

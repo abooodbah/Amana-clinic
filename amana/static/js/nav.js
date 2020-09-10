@@ -2,6 +2,7 @@ window.onscroll = function() {myFunction()};
 
 // Get the header
 var mynav = document.getElementById("mynav");
+var sitebrand = $(".site-branding")[0];
 
 // Get the offset position of the navbar
 var sticky = mynav.offsetTop;
@@ -10,14 +11,23 @@ var sticky = mynav.offsetTop;
 function myFunction() {
   if (window.pageYOffset > sticky) {
     mynav.classList.add("sticky");
+    sitebrand.style["padding"] = "0px";
   } else {
     mynav.classList.remove("sticky");
+    sitebrand.style["padding"] = "20px 0px";
   }
 }
 
 
-$('.dropdown-submenu .dropdown-toggle').on("click", function(e) {
-  e.stopPropagation();
-  e.preventDefault();
-  $(this).next('.dropdown-menu').toggle();
+jQuery(document).ready(function($){
+	
+	$('a.scroll-link').click(function(e){
+		e.preventDefault();
+		$id = $(this).attr('href');
+		$('body,html').animate({
+			scrollTop: $($id).offset().top -200
+		}, 750);
+	});
+
+
 });

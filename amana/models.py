@@ -36,51 +36,82 @@ class User(db.Model, UserMixin):
 
 class FAQ(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(100), nullable=False)
+    title_ar = db.Column(db.String(100), nullable=False)
     title_en = db.Column(db.String(100), nullable=False)
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-    content = db.Column(db.Text, nullable=False)
+    content_ar = db.Column(db.Text, nullable=False)
     content_en = db.Column(db.Text, nullable=False)
 
-    def __repr__(self):
-        return f"Post('{self.title}', '{self.date_posted}')"
 
 class NewsPost(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(100), nullable=False)
+    title_ar = db.Column(db.String(100), nullable=False)
     title_en = db.Column(db.String(100), nullable=False)
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     image_file = db.Column(db.String(20), nullable=True, default='default.jpg')
-    content = db.Column(db.Text, nullable=False)
+    content_ar = db.Column(db.Text, nullable=False)
     content_en = db.Column(db.Text, nullable=False)
 
-    def __repr__(self):
-        return f"Post('{self.title}', '{self.date_posted}')"
+
 
 class Service(db.Model):
+    __tablename__ = 'service'
+    __mapper_args__ = {'polymorphic_identity': 'service'}
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(100), nullable=False)
+    title_ar = db.Column(db.String(100), nullable=False)
     title_en = db.Column(db.String(100), nullable=False)
     title_Font_size = db.Column(db.Integer, nullable=False, default=18)
-    image_file = db.Column(db.String(20), nullable=False, default=18)
-    content = db.Column(db.Text, nullable=False)
+    content_ar = db.Column(db.Text, nullable=False)
     content_en = db.Column(db.Text, nullable=False)
     content_Font_size = db.Column(db.Integer, nullable=False)
+    subservices = db.relationship('SubService', backref='parent Service', lazy=True)
+    service_type = db.Column(db.String(32), nullable=False, default=__tablename__)
+    __mapper_args__ = {'polymorphic_on': service_type}
 
     def __repr__(self):
-        return f"Post('{self.title}', '{self.date_posted}')"
+        return f"Service('{self.title_ar}', '{self.title_en}')"
+
+
+
+class MainService(Service):
+    __tablename__= 'main_service'
+    id = db.Column(db.Integer, db.ForeignKey('service.id'),primary_key=True)
+    service_type = db.Column(db.String(32), nullable=False, default=__tablename__)
+    __mapper_args__ = {
+        'polymorphic_identity':'main_service'
+    }
+
+class HemorrhiodsService(Service):
+    __tablename__ = 'hemorrhiods_service'
+    id = db.Column(db.Integer, db.ForeignKey('service.id'),primary_key=True)
+    service_type = db.Column(db.String(32), nullable=False, default=__tablename__)
+    __mapper_args__ = {
+        'polymorphic_identity':'hemorrhiods_service'
+    }
+
+class SubService(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title_ar = db.Column(db.String(100), nullable=False)
+    title_en = db.Column(db.String(100), nullable=False)
+    title_Font_size = db.Column(db.Integer, nullable=False, default=18)
+    content_ar = db.Column(db.Text, nullable=False)
+    content_en = db.Column(db.Text, nullable=False)
+    content_Font_size = db.Column(db.Integer, nullable=False, default=18)
+    Service = db.Column(db.Integer, db.ForeignKey('service.id'), nullable=True)
+    def __repr__(self):
+        return f"Service('{self.title_ar}', '{self.title_en}')"
+
 
 
 class Information_and_Records(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    Introduction = db.Column(db.Text, nullable=False)
+    Introduction_ar = db.Column(db.Text, nullable=False)
     Introduction_en = db.Column(db.Text, nullable=False)
     phonenumber = db.Column(db.Integer, nullable=False)
     email = db.Column(db.Text, nullable=False)
-    image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
-
+    
     def __repr__(self):
-        return f"Post('{self.title}', '{self.date_posted}')"
+        return f"intro('{self.title_ar}', '{self.date_posted}')"
 
 
 class Appointment(db.Model, UserMixin):

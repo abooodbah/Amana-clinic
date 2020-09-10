@@ -5,7 +5,10 @@ from PIL import Image
 from flask import url_for, current_app
 from flask_mail import Message
 from amana import mail
-
+from amana.models import User
+from amana import app, bcrypt, mail
+from sqlalchemy import event
+from werkzeug.security import generate_password_hash
 
 def save_picture(form_picture):
     random_hex = secrets.token_hex(8)
@@ -32,3 +35,6 @@ def send_reset_email(user):
 If you did not make this request then simply ignore this email and no changes will be made.
 '''
     mail.send(msg)
+
+
+

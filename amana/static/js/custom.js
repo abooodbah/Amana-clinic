@@ -56,17 +56,25 @@
     $(function() {
         $('.tab-content:first-child').show();
 
-        $('.tab-nav').bind('click', function(e) {
+        $('li.tab-nav').bind('click', function(e) {
             $this = $(this);
             $tabs = $this.parent().parent().next();
             $target = $($this.data("target"));
             $this.siblings().removeClass('active');
-            $target.siblings().css("display", "none");
+            $target.first().siblings().css("display", "none");
             $this.addClass('active');
-            $target.fadeIn("slow");
-        });
+            console.log($target.children());
+            $target.each(function(){
+                $(this).fadeIn("fast")
+                $(this).css("display", "flow-root");
 
-        $('.tab-nav:first-child').trigger('click');
+            });
+        });
+        var url_string = window.location.href
+        var url = new URL(url_string);
+        var param = url.searchParams.get("service");
+        console.log(param);
+        $('.tab-nav:nth-child(1)').trigger('click');
     });
 
     // Circular Progress Bar

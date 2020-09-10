@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    {% if title %}
+        <title>Flask Blog - {{ title }}</title>
+    {% else %}
+        <title>{{add_style_if_ar('عيادة أمانة','Amana Clinic')}}</title>
+    {% endif %}
+    <!-- 
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='') }}">
+    -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/mdb.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/mdb.lite.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+</head>
+
+        
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+  {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">
+      {{ message }}
+    </div>
+  {% endfor %}
+{% endif %}
+{% endwith %}
+
+  <div class="row" style="height: 95vh; justify-content: center;">
+    <div class="col-6 col-md-4 order-last" style="text-align: center; align-self: center;">
+        <div class="logo" >
+            <img class="d-block" src="static/img/logo.jpg" alt="logo" style="width: 75%;">
+        </div>
+    </div>
+
+
+<div class="col-12 col-md-8" style="text-align: center;align-self: center;font-family: inherit;color: #282b2d;text-align: -webkit-center;">
+    <div class="card" style="height: min-content;width: max-content;align-items: center;padding: 20px;">
+    {% block content %}{% endblock %}
+
+    <div class="btn_holder">
+        <a class="button gradient-bg button gradient-bg ml-3 mt-3 mb-2" role="button" href="/home" style="background-color: rgb(133, 178, 253);max-width: min-content;">Back to home</a>
+    </div>
+    </div>
+</div>
+</div>
+
+
+      <div class="break"></div>
+
+  </div>
+    <!-- Start: Bold BS4 Footer Simple -->
+    <div class="row order-last">
+    <div class="col">
+    </div>
+    </div>
+    <!-- End: Bold BS4 Footer Simple -->
+    <script src="{{ url_for('static', filename = 'assets/js/jquery.min.js') }}" ></script>
+    <script src="{{ url_for('static', filename = 'assets/bootstrap/js/bootstrap.min.js') }}" ></script>
+    <script src="{{ url_for('static', filename = 'assets/js/bs-init.js') }}" ></script>
+    <script src="{{ url_for('static', filename = 'assets/js/Contact-Form-v2-Modal--Full-with-Google-Map.js') }}" ></script>
+    <script src="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.js"></script>
+</body>
+
+</html>

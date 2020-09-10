@@ -16,7 +16,7 @@
     </div>
 </div>
 
-<img class="header-img"  style="position: absolute;top: 0;right: 0;max-width: 65%;height: auto;" src="static/images/hero-bg-3.png" alt="">
+<img class="header-img"  style="{{add_style_if_ar('right: unset;transform: scaleX(-1);' , 'right: 0;')}}position: absolute;top: 0;max-width: 65%;height: auto;" src="static/images/hero-bg-3.png" alt="">
 </header><!-- .site-header -->
 
 
@@ -25,28 +25,44 @@
         <div class="col-12">
             <div class="services-tabs" style="{{add_style_if_ar('direction: rtl;text-align: right;', 'direction: ltr;text-align: left;')}}">
                 <div class="tabs">
-                    <ul class="tabs-nav d-flex flex-wrap">
+                    <ul class="tabs-nav d-flex flex-nowrap" style="overflow-x: scroll;">
                         {% for service in Services %}
-
-                        <li class="tab-nav d-flex justify-content-center align-items-center active" data-target="#tab_{{ service.id }}">{{ service.title }}</li>
+                        {{ service.title }} 
+                        <li class="tab-nav d-flex justify-content-center align-items-center active" data-target=".tab_{{ service.id }}">{{add_style_if_ar(service.title_ar,service.title_en)}}</li>
                         {% endfor %}
 
                     </ul>
 
                     <div class="tabs-container">
                         {% for service in Services %}
-
-                        <div id="tab_{{ service.id }}" class="tab-content" style="display: block;">
+                      
+                        <div class="tab_{{ service.id }} tab-content" style="display: block;">
                             <img src="static/images/services/{{ service.id }}.jpg" alt="" style="max-width: 290px;">
 
-                            <h4>{{ service.title }} </h4>
+                            <h4>{{add_style_if_ar(service.title_ar,service.title_en)}} </h4>
 
-                            <p>{{ service.content }}</p>
+                            <p>{{add_style_if_ar(service.content_ar,service.content_en)}}</p>
                         </div>
+                        {%for subservice in service.subservices %}
+                        
+                        <div class="tab_{{ service.id }} tab-content" style="display: block; {{'background:#d3d3d34a;' if ((loop.index) %2 == 1)  else ''}}">
+                          <img src="static/images/services/{{ service.id }}_{{ subservice.id }}.jpg" alt="" style="max-width: 290px;">
+
+                          <h4>{{add_style_if_ar(subservice.title_ar,subservice.title_en)}} </h4>
+
+                          <p>{{add_style_if_ar(subservice.content_ar,subservice.content_en)}}</p>
+                      </div>
+                        {%endfor%}
+                        
+                        
+                        
+                        
                         {% endfor %}
 
 
                     </div>
+
+                    
                 </div>
             </div>
         </div>
@@ -59,7 +75,7 @@
   <div class="container-fluid white lighten-4 mb-0 mt-0 ">
     <div class="container mb-0 mt-0">
 
-      <div class="row mt-5 pt-3">
+      <div class="row mt-5 pt-3" id="booking">
 
         <div class="col-lg-12 col-md-12 d-flex align-items-stretch">
           <!-- Booking card -->

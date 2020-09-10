@@ -39,24 +39,53 @@
                        <ul class="d-flex flex-column flex-lg-row justify-content-lg-end align-items-center">
                         <li class="current-menu-item"><a href="{{url_for('main.home', locale = request.args.get('locale'))}}">{{_('Home')}}</a></li>
                         <li><a href="{{url_for('main.about', locale = request.args.get('locale'))}}">{{_('About us')}}</a></li>
-                        <li><a href="{{url_for('main.services', locale = request.args.get('locale'))}}">{{_('Services')}}</a></li>
+                        <li class="nav-item dropdown">
+                          <a class= "dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false" href="#">{{_('Services')}}</a>
+                          <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink" style="border: #35c3f9 2px solid; border-radius: 10px;">
+                  
+                            {%for Service in mainServices%}
+                            {%if not Service.subservices%}
+                            <a class="dropdown-item" href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = hemorrhoids )}}">{{add_style_if_ar(Service.title_ar,Service.title_en)}}</a>
+                            {%else%}
+                            <a class= "dropdown-item dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false" href="#">{{add_style_if_ar(Service.title_ar,Service.title_en)}}</a>
+                            
+                            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink" style="border: #35c3f9 2px solid; border-radius: 10px;">
+                              {%for subservice in Service.subservices%}
+                              <a class="dropdown-item" href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = hemorrhoids )}}">{{add_style_if_ar(subservice.title_ar,subservice.title_en)}}</a>
+                              {%endfor%}
+                            </div>
+                            {%endif%}
+                            {%endfor%}
+                          
+                          </div>
+                        </li>
                         <!-- Dropdown -->
       <li class="nav-item dropdown">
         <a class= "dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false" href="#">{{_('LHP')}}</a>
-        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink" style="border: #35c3f9 2px solid; border-radius: 10px;">
+
+          {%for Service in hemorrhiodsServices%}
+          {%if not Service.subservices%}
+          <a class="dropdown-item" href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = hemorrhoids )}}">{{add_style_if_ar(Service.title_ar,Service.title_en)}}</a>
+          {%else%}
           <a class= "dropdown-item dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false" href="#">{{_('LHP')}}</a>
-        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
+          aria-haspopup="true" aria-expanded="false" href="#">{{add_style_if_ar(Service.title_ar,Service.title_en)}}</a>
+          
+          <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink" style="border: #35c3f9 2px solid; border-radius: 10px;">
+            {%for subservice in Service.subservices%}
+            <a class="dropdown-item" href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = hemorrhoids )}}">{{add_style_if_ar(subservice.title_ar,subservice.title_en)}}</a>
+            {%endfor%}
+          </div>
+          {%endif%}
+          {%endfor%}
+        
         </div>
       </li>
                         <li><a href="{{url_for('main.contact', locale = request.args.get('locale'))}}">{{_('Contact')}}</a></li>
+                        <li style="border-radius: 120px;background:linear-gradient(270deg, rgba(50,200,250,1) 0%, rgba(88,125,228,1) 100%)!important;"><a style="color: white; max-height: fit-content;padding: 15px;margin: 0;" class="scroll-link" href="#booking">{{_('Book an Appointment')}}</a></li>
                         </ul>
                     
                     </div><!-- .site-branding -->
@@ -66,7 +95,6 @@
                             <li class="mobile"><a href="{{url_for('main.home', locale = request.args.get('locale'))}}">{{_('Home')}}</a></li>
                             <li class="mobile"><a href="{{url_for('main.about', locale = request.args.get('locale'))}}">{{_('About us')}}</a></li>
                             <li class="mobile"><a href="{{url_for('main.services', locale = request.args.get('locale'))}}">{{_('Services')}}</a></li>
-                            <li class="mobile"><a href="news.html">{{_('News')}}</a></li>
                             <li class="mobile nav-item dropdown">
                                 <a class= "dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false" href="#">{{_('LHP')}}</a>

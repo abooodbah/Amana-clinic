@@ -1,9 +1,13 @@
 
+
 body {
     color: #404040;
     font-size: 16px;
     line-height: 1.8;
     font-family: 'Segoe UI light', sans-serif;
+}
+ul::-webkit-scrollbar {
+    display: none;
 }
 
 img {

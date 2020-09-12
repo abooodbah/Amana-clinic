@@ -39,7 +39,7 @@
                         <div class="tab_{{ service.id }} tab-content" style="display: block;">
                             <img src="static/images/services/{{ service.id }}.jpg" alt="" style="max-width: 290px;">
 
-                            <h4>{{add_style_if_ar(service.title_ar,service.title_en)}} </h4>
+                        <h4 style="font-size: {{service.title_Font_size if service.title_Font_size else ''}}pt;">{{add_style_if_ar(service.title_ar,service.title_en)}} </h4>
 
                             <p>{{add_style_if_ar(service.content_ar,service.content_en)}}</p>
                         </div>
@@ -48,7 +48,7 @@
                         <div class="tab_{{ service.id }} tab-content" style="display: block; {{'background:#d3d3d34a;' if ((loop.index) %2 == 1)  else ''}}">
                           <img src="static/images/services/{{ service.id }}_{{ subservice.id }}.jpg" alt="" style="max-width: 290px;">
 
-                          <h4>{{add_style_if_ar(subservice.title_ar,subservice.title_en)}} </h4>
+                          <h4 style="font-size: {{(service.title_Font_size -2) if service.title_Font_size else ''}}pt;">{{add_style_if_ar(subservice.title_ar,subservice.title_en)}} </h4>
 
                           <p>{{add_style_if_ar(subservice.content_ar,subservice.content_en)}}</p>
                       </div>

@@ -5,6 +5,7 @@ body {
     font-size: 16px;
     line-height: 1.8;
     font-family: 'Segoe UI light', sans-serif;
+    
 }
 ul::-webkit-scrollbar {
     display: none;
@@ -297,9 +298,7 @@ transition: .5s ease-in-out;
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-.hero-slider {
-    max-height: 950px;
-}
+
 
 .hero-content-wrap {
     min-height: 700px;

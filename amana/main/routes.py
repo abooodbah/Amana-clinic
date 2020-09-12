@@ -1,5 +1,5 @@
 from flask import render_template, request, Blueprint, flash, redirect, url_for, current_app
-from amana.models import FAQ,NewsPost,MainService,HemorrhiodsService,Information_and_Records
+from amana.models import FAQ,NewsPost,MainService,HemorrhiodsService,Information_and_Records,Service
 from amana.models import User
 from amana import app, bcrypt, mail, get_locale
 from amana.main.forms import ContactForm,BookingForm, generate_services
@@ -82,7 +82,7 @@ Service: {bookingform.service.data}
 def home():
     FAQs = FAQ.query
     info = Information_and_Records.query.first()
-    Services = MainService.query.all()
+    Services = Service.query.all()[-9:]
     contactform = ContactForm()
     bookingform = BookingForm()
     bookingform.service.choices = generate_services(get_locale())

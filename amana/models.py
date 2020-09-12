@@ -63,7 +63,7 @@ class Service(db.Model):
     title_Font_size = db.Column(db.Integer, nullable=False, default=18)
     content_ar = db.Column(db.Text, nullable=False)
     content_en = db.Column(db.Text, nullable=False)
-    content_Font_size = db.Column(db.Integer, nullable=False)
+    content_Font_size = db.Column(db.Integer, nullable=False, default=12)
     subservices = db.relationship('SubService', backref='parent Service', lazy=True)
     service_type = db.Column(db.String(32), nullable=False, default=__tablename__)
     __mapper_args__ = {'polymorphic_on': service_type}
@@ -96,7 +96,7 @@ class SubService(db.Model):
     title_Font_size = db.Column(db.Integer, nullable=False, default=18)
     content_ar = db.Column(db.Text, nullable=False)
     content_en = db.Column(db.Text, nullable=False)
-    content_Font_size = db.Column(db.Integer, nullable=False, default=18)
+    content_Font_size = db.Column(db.Integer, nullable=False, default=12)
     Service = db.Column(db.Integer, db.ForeignKey('service.id'), nullable=True)
     def __repr__(self):
         return f"Service('{self.title_ar}', '{self.title_en}')"
@@ -105,6 +105,10 @@ class SubService(db.Model):
 
 class Information_and_Records(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    Main_page_intro_title_ar = db.Column(db.Text, nullable=False)
+    Main_page_intro_title_en = db.Column(db.Text, nullable=False)
+    Main_page_intro_details_ar = db.Column(db.Text, nullable=False)
+    Main_page_intro_details_en = db.Column(db.Text, nullable=False)
     Introduction_ar = db.Column(db.Text, nullable=False)
     Introduction_en = db.Column(db.Text, nullable=False)
     phonenumber = db.Column(db.Integer, nullable=False)

@@ -40,8 +40,8 @@ def save_picture_send(form_picture):
 
 def send_reset_email(form):
     msg = Message('Password Reset Request',
-                  sender='noreply@demo.com',
-                  recipients=[user.email])
+                  sender='Amanaclinicemail@gmail.com',
+                  recipients=[form.email.data])
     msg.body = f'''ssssss
 '''
     mail.send(msg)

@@ -30,59 +30,62 @@
 </head>
 <body>
   <header class="site-header" style="{{'position: relative;padding: 220px 0 140px;background-color: #f0f4f8;' if not slider else ''}}">
-    <div class="nav-bar" id="mynav" style="{{add_style_if_ar('direction: rtl;text-align: right;', 'direction: ltr;text-align: left;')}} background:#c9e9ffc6;">
+    <div class="nav-bar" id="mynav" style="{{add_style_if_ar('direction: rtl;text-align: right;', 'direction: ltr;text-align: left;')}} background:linear-gradient(90deg, rgb(66 134 210) 0%, rgb(88 125 228 / 0%) 100%);">
         <div class="container">
             <div class="row">
                 <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
                     <div class="site-branding site-navigation d-flex align-items-center">
-                       <a class="d-block" href="index.html" rel="home"><img class="d-block" src="static/img/logo g.png" alt="logo" style="width: 75px;;"></a>
+                       <a class="d-block" href="index.html" rel="home"><img class="d-block" src="static/img/logo g.png" alt="logo" style="width: 100px;;"></a>
                        <ul class="d-flex flex-column flex-lg-row justify-content-lg-end align-items-center">
                         <li class="current-menu-item"><a href="{{url_for('main.home', locale = request.args.get('locale'))}}">{{_('Home')}}</a></li>
                         <li><a href="{{url_for('main.about', locale = request.args.get('locale'))}}">{{_('About us')}}</a></li>
                         <li class="nav-item dropdown">
                           <a class= "dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                           aria-haspopup="true" aria-expanded="false" href="#">{{_('Services')}}</a>
-                          <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink" style="border: #35c3f9 2px solid; border-radius: 10px;">
-                  
+                          <ul class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink" style="border: #35c3f9 2px solid; border-radius: 10px; background:white;">
+                          
                             {%for Service in mainServices%}
                             {%if not Service.subservices%}
-                            <a class="dropdown-item" href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = 'main' )}}">{{add_style_if_ar(Service.title_ar,Service.title_en)}}</a>
+                            <li><a class="dropdown-item" href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = 'main' )}}">{{add_style_if_ar(Service.title_ar,Service.title_en)}}</a></li>
                             {%else%}
+                            <li>
                             <a class= "dropdown-item dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false" href="#">{{add_style_if_ar(Service.title_ar,Service.title_en)}}</a>
                             
-                            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink" style="border: #35c3f9 2px solid; border-radius: 10px;">
+                            <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink" style="border: none!important;">
                               {%for subservice in Service.subservices%}
-                              <a class="dropdown-item" href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = 'main' )}}">{{add_style_if_ar(subservice.title_ar,subservice.title_en)}}</a>
+                              <li><a class="dropdown-item" href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = 'main' )}}">{{add_style_if_ar(subservice.title_ar,subservice.title_en)}}</a></li>
                               {%endfor%}
-                            </div>
+                            </ul>
+                          </li>
                             {%endif%}
                             {%endfor%}
+                          </ul>
                           
-                          </div>
                         </li>
                         <!-- Dropdown -->
       <li class="nav-item dropdown">
         <a class= "dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false" href="#">{{_('LHP')}}</a>
-        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink" style="border: #35c3f9 2px solid; border-radius: 10px;">
+        <ul class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink" style="border: #35c3f9 2px solid; border-radius: 10px; background:white;">
 
           {%for Service in hemorrhiodsServices%}
           {%if not Service.subservices%}
-          <a class="dropdown-item" href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = hemorrhoids )}}">{{add_style_if_ar(Service.title_ar,Service.title_en)}}</a>
+          <li><a class="dropdown-item" href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = hemorrhoids )}}">{{add_style_if_ar(Service.title_ar,Service.title_en)}}</a></li>
           {%else%}
-          <a class= "dropdown-item dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          <li><a class= "dropdown-item dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false" href="#">{{add_style_if_ar(Service.title_ar,Service.title_en)}}</a>
           
-          <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink" style="border: #35c3f9 2px solid; border-radius: 10px;">
+          <ul class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink" style="border: none!important;">
             {%for subservice in Service.subservices%}
-            <a class="dropdown-item" href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = hemorrhoids )}}">{{add_style_if_ar(subservice.title_ar,subservice.title_en)}}</a>
+            <li><a class="dropdown-item" href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = hemorrhoids )}}">{{add_style_if_ar(subservice.title_ar,subservice.title_en)}}</a></li>
             {%endfor%}
-          </div>
+          </ul>
+        </li>
           {%endif%}
           {%endfor%}
         
-        </div>
+        </ul>
       </li>
                         <li><a href="{{url_for('main.contact', locale = request.args.get('locale'))}}">{{_('Contact')}}</a></li>
                         <li style="border-radius: 120px;background:linear-gradient(270deg, rgba(50,200,250,1) 0%, rgba(88,125,228,1) 100%)!important;"><a style="color: white; max-height: fit-content;padding: 15px;margin: 0;" class="scroll-link" href="#booking">{{_('Book an Appointment')}}</a></li>
@@ -132,15 +135,7 @@
 
 
         
-          {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-              {% for category, message in messages %}
-                <div class="alert alert-{{ category }}">
-                  {{ message }}
-                </div>
-              {% endfor %}
-            {% endif %}
-          {% endwith %}
+
 
 
           {% block content %}{% endblock %}
@@ -157,9 +152,9 @@
               <div class="row">
                   <div class="col-12 col-md-6 col-lg-4">
                       <div class="foot-about">
-                          <h2><a href="#"><img src="static/img/logo g.png" alt="" style="width: 75px;"></a></h2>
+                          <h2><a href="#"><img src="static/img/logo g.png" alt="" style="width: 100px;"></a></h2>
 
-                          <p>{{add_style_if_ar(info.Introduction, info.Introduction_en)}}</p>
+                          <p>{{add_style_if_ar(info.Introduction_ar, info.Introduction_en)}}</p>
 
                           <p class="copyright">
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Amana Clinic <i class="fa fa-heart" aria-hidden="true"></i> <hr> by <a href="" target="_blank">Cortex-Designs</a>

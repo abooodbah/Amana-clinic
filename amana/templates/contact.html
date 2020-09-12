@@ -23,38 +23,125 @@
 
 
 <main role="main" class="container mb-0 mt-0" >
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }}">
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
 
-<div class="contact-form card mt-5 pt-4 pb-4">
+<form class="contact-form card mt-5 pt-4 pb-4" method="POST" action="" enctype="multipart/form-data">
+  {{ contactform.hidden_tag() }}
         <div class="container">
+          <fieldset class="form-group">
             <div class="row" style=" {{add_style_if_ar('direction: rtl;text-align: right;text-decoration: none;', 'direction: ltr;text-align: left;')}}">
                 <div class="col-12">
                     <h2 class="text-center">{{_('Get in Touch')}}</h2>
                 </div>
 
                 <div class="col-12  col-md-4">
-                    <input type="text" placeholder="{{_('name')}}">
+                  <div class="form-group">
+                    {{ contactform.name.label(class="form-control-label") }}
+                    {% if contactform.name.errors %}
+                    <div class="outer-transition">
+                    {{ contactform.name(class="form-control           form-control-lg is-invalid") }}
+                  </div>
+                  <div class="invalid-feedback">
+                      {% for error in contactform.name.errors %}
+                      <span style="display: block;">{{ error }}</span>
+                      {% endfor %}
+                  </div>
+                  {% else %}
+                  <div class="outer-transition">
+                      {{ contactform.name(class="form-control form-control-lg mt-0") }}
+                  </div>
+                  {% endif %}
+                    </div>
                 </div><!-- col-4 -->
 
                 <div class="col-12 col-md-4">
-                    <input type="email" placeholder="{{_('Email')}}">
+                  <div class="form-group">
+                    {{ contactform.email.label(class="form-control-label") }}
+                    {% if contactform.email.errors %}
+                    <div class="outer-transition">
+                    {{ contactform.email(class="form-control           form-control-lg is-invalid") }}
+                  </div>
+                  <div class="invalid-feedback">
+                      {% for error in contactform.email.errors %}
+                      <span style="display: block;">{{ error }}</span>
+                      {% endfor %}
+                  </div>
+                  {% else %}
+                  <div class="outer-transition">
+                      {{ contactform.email(class="form-control form-control-lg mt-0") }}
+                  </div>
+                  {% endif %}
+                    </div>
                 </div><!-- col-6 -->
 
                 <div class="col-12 col-md-4">
-                    <input type="text" placeholder="{{_('Subject')}}">
+                  <div class="form-group">
+                    {{ contactform.subject.label(class="form-control-label") }}
+                    {% if contactform.subject.errors %}
+                    <div class="outer-transition">
+                    {{ contactform.subject(class="form-control           form-control-lg is-invalid") }}
+                  </div>
+                  <div class="invalid-feedback">
+                      {% for error in contactform.subject.errors %}
+                      <span style="display: block;">{{ error }}</span>
+                      {% endfor %}
+                  </div>
+                  {% else %}
+                  <div class="outer-transition">
+                      {{ contactform.subject(class="form-control form-control-lg mt-0") }}
+                  </div>
+                  {% endif %}
+                    </div>
                 </div>
 
                 <div class="col-12">
-                    <textarea name="name" rows="12" cols="80" placeholder="{{_('Message')}}" style="margin-top: 30px; margin-bottom: 0px; height: 176px;"></textarea>
+                  <div class="form-group">
+                    {{ contactform.message.label(class="form-control-label") }}
+                    {% if contactform.message.errors %}
+                    <div class="outer-transition">
+                    {{ contactform.message(class="form-control           form-control-lg is-invalid") }}
+                  </div>
+                  <div class="invalid-feedback">
+                      {% for error in contactform.message.errors %}
+                      <span style="display: block;">{{ error }}</span>
+                      {% endfor %}
+                  </div>
+                  {% else %}
+                  <div class="outer-transition">
+                      {{ contactform.message(class="form-control form-control-lg mt-0" , style="height: 150px;") }}
+                  </div>
+                  {% endif %}
+                    </div>                </div>
+                    <div class="col-12">
+                  <div class="form-group">
+                    {{ contactform.image.label() }}
+                    <div class="outer-transition">
+                    {{ contactform.image(class="contactform-control", style="padding-top: 3px;") }}
+                    
                 </div>
+                    {% if contactform.image.errors %}
+                        {% for error in contactform.image.errors %}
+                            <span class="text-danger">{{ error }}</span>
+                        {% endfor %}
+                    {% endif %}
+                </div>           
+                    </div>
                 <div class="col-12">
-                <input type="file" id="myfile" name="myfile">
-            </div>
-                <div class="col-12">
-                    <input type="submit" name="" value="{{_('Send Message')}}" class="button gradient-bg" style="width: -moz-available;width: -webkit-fill-available; ">
+                  {{ contactform.submit(class="button gradient-bg", style="width: -moz-available;width: -webkit-fill-available; ", type="submit") }}
                 </div>
             </div><!-- row -->
+          </fieldset>
         </div>
-    </div>
+        {{ contactform.csrf_token }}
+    </form>
 
 
     <div class="container">
@@ -69,7 +156,6 @@
 
     <section>
       <div class="container-fluid white lighten-4 mb-0 mt-0 ">
-        <div class="container mb-0 mt-0">
   
           <div class="row mt-5 pt-3" id= "booking">
   
@@ -81,44 +167,134 @@
   
     <!-- Card content -->
     <div class="card-body" style="{{add_style_if_ar('direction: rtl;text-align: right;', 'direction: ltr;text-align: left;')}}">
-      <form class="">
-  
+      <form class="" method="POST" action="" enctype="multipart/form-data">
+        {{ bookingform.hidden_tag() }}
+        <fieldset class="form-group">
         <p class="h4 mb-4 text-center">{{_('Book an Appointment')}}</p>
     
     
         <label for="defaultSelect">{{_('Book an Appointment')}}</label>
         <div class="row">
         <div class="col-12  col-md-4">
-        <select id="defaultSelect" class="browser-default custom-select mb-4 booking-form-field booking-form-field">
-            <option value="" disabled="">{{_('Choose Service')}}</option>
-            
-            {%for service in Services%}
-            <option value="{{service.id}}" selected="">{{service.title}}</option>
-            {% endfor %}
-            <option value="1" selected="">{{_('consultation')}}</option>
-        </select>
+          <div class="form-group">
+            {{ bookingform.service.label(class="form-control-label") }}
+            {% if bookingform.service.errors %}
+            <div class="outer-transition">
+            {{ bookingform.service(class="form-control           form-control-lg is-invalid") }}
+          </div>
+          <div class="invalid-feedback">
+              {% for error in bookingform.service.errors %}
+              <span style="display: block;">{{ error }}</span>
+              {% endfor %}
+          </div>
+          {% else %}
+          <div class="outer-transition">
+              {{ bookingform.service(class="form-control form-control-lg mt-0 browser-default custom-select mb-4 booking-form-field booking-form-field") }}
+          </div>
+          {% endif %}
+            </div>
       </div>
       <div class="col-12  col-md-4">
-        <input type="text" id="textInput" class="form-control mb-4 booking-form-field" placeholder="{{_('name')}}">
+                          <div class="form-group">
+                    {{ bookingform.name.label(class="form-control-label") }}
+                    {% if bookingform.name.errors %}
+                    <div class="outer-transition">
+                    {{ bookingform.name(class="form-control           form-control-lg is-invalid") }}
+                  </div>
+                  <div class="invalid-feedback">
+                      {% for error in bookingform.name.errors %}
+                      <span style="display: block;">{{ error }}</span>
+                      {% endfor %}
+                  </div>
+                  {% else %}
+                  <div class="outer-transition">
+                      {{ bookingform.name(class="form-control form-control-lg mt-0") }}
+                  </div>
+                  {% endif %}
+                    </div>
   </div>
         <div class="col-12  col-md-4">
-        <input type="text" id="textInput" class="form-control mb-4 booking-form-field" placeholder="{{_('Phone')}}">
+                          <div class="form-group">
+                    {{ bookingform.phone.label(class="form-control-label") }}
+                    {% if bookingform.phone.errors %}
+                    <div class="outer-transition">
+                    {{ bookingform.phone(class="form-control           form-control-lg is-invalid") }}
+                  </div>
+                  <div class="invalid-feedback">
+                      {% for error in bookingform.phone.errors %}
+                      <span style="display: block;">{{ error }}</span>
+                      {% endfor %}
+                  </div>
+                  {% else %}
+                  <div class="outer-transition">
+                      {{ bookingform.phone(class="form-control form-control-lg mt-0") }}
+                  </div>
+                  {% endif %}
+                    </div>
   </div>
 </div>
 <div class="row">
   <div class="col-12  col-md-6">
-  
-        <input type="text"  class="form-control mb-4 booking-form-field" placeholder="{{_('Email')}}">
+    <div class="form-group">
+      {{ bookingform.email.label(class="form-control-label") }}
+      {% if bookingform.email.errors %}
+      <div class="outer-transition">
+      {{ bookingform.email(class="form-control           form-control-lg is-invalid") }}
+    </div>
+    <div class="invalid-feedback">
+        {% for error in bookingform.email.errors %}
+        <span style="display: block;">{{ error }}</span>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="outer-transition">
+        {{ bookingform.email(class="form-control form-control-lg mt-0") }}
+    </div>
+    {% endif %}
       </div>
+      </div>
+
       <div class="col-12  col-md-6">
-        <input type="date" id="start" name="trip-start"
-         value="2018-07-22"
-         min="2018-01-01" max="2018-12-31" class="form-control mb-4 booking-form-field" style="display: flex;">
+          <div class="form-group">
+                    {{ bookingform.date.label(class="form-control-label") }}
+                    {% if bookingform.date.errors %}
+                    <div class="outer-transition">
+                    {{ bookingform.date(class="form-control           form-control-lg is-invalid") }}
+                  </div>
+                  <div class="invalid-feedback">
+                      {% for error in bookingform.date.errors %}
+                      <span style="display: block;">{{ error }}</span>
+                      {% endfor %}
+                  </div>
+                  {% else %}
+                  <div class="outer-transition">
+                      {{ bookingform.date(class="form-control form-control-lg mt-0", max="2030-06-14") }}
+                  </div>
+                  {% endif %}
+                    </div>
         </div>
         </div>
-        <textarea class="form-control rounded-0 booking-form-field" id="exampleFormControlTextarea2" rows="3" placeholder="{{_('Message')}}"></textarea>
-    
-        <input class="button gradient-bg button gradient-bg ml-3 mt-3 mb-2" type="submit" value="{{_('Book an Appointment')}}" style="width: -webkit-fill-available;">  
+        <div class="col-12">
+          <div class="form-group">
+            {{ bookingform.message.label(class="form-control-label") }}
+            {% if bookingform.message.errors %}
+            <div class="outer-transition">
+            {{ bookingform.message(class="form-control           form-control-lg is-invalid") }}
+          </div>
+          <div class="invalid-feedback">
+              {% for error in bookingform.message.errors %}
+              <span style="display: block;">{{ error }}</span>
+              {% endfor %}
+          </div>
+          {% else %}
+          <div class="outer-transition">
+              {{ bookingform.message(class="form-control form-control-lg mt-0" , style="height: 150px;") }}
+          </div>
+          {% endif %}
+            </div>                </div>    
+        {{ bookingform.submit(class="button gradient-bg", style="width: -moz-available;width: -webkit-fill-available; ", type="submit") }}
+      </fieldset>
+        {{ bookingform.csrf_token }}
       </form>
     </div>
   
@@ -198,7 +374,7 @@
               </div>
   
           </div>
-        </div>
+
         </div>
         </section>
 

@@ -52,6 +52,65 @@ transition: .5s ease-in-out;
 }
   
 
+.dropdown-menu > .dropdown {
+  position: relative;
+}
+
+.dropdown-menu > .dropdown a::after {
+  transform: rotate(-90deg);
+  position: absolute;
+  right: .9rem;
+  top: .9rem;
+}
+
+.dropdown-menu > .dropdown .dropdown-menu {
+  top: -.7rem;
+  left: 100%;
+  border-radius: 0 .25rem .25rem .25rem;
+}
+
+.mainmenu .collapse ul > li:hover > a{background: #4CAF50;}
+.mainmenu .collapse ul ul > li:hover > a, .navbar-default .navbar-nav .show .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .show .dropdown-menu > li > a:hover{background: #4CAF50;}
+.mainmenu .collapse ul ul ul > li:hover > a{background: #4CAF50;}
+
+.mainmenu .collapse ul ul, .mainmenu .collapse ul ul.dropdown-menu{background:#1565C0;}
+.mainmenu .collapse ul ul ul, .mainmenu .collapse ul ul ul.dropdown-menu{background:#1E88E5}
+.mainmenu .collapse ul ul ul ul, .mainmenu .collapse ul ul ul ul.dropdown-menu{background:#64B5F6}
+
+/******************************Drop-down menu work on hover**********************************/
+.mainmenu{background: none;border: 0 solid;margin: 0;padding: 0;min-height:20px;width: 100%;}
+@media only screen and (min-width: 767px) {
+.mainmenu .collapse ul li:hover> ul{display:block}
+.mainmenu .collapse ul ul{position:absolute;top:100%;left:0;min-width:250px;display:none}
+/*******/
+.mainmenu .collapse ul ul li{position:relative}
+.mainmenu .collapse ul ul li:hover> ul{display:block}
+.mainmenu .collapse ul ul ul{position:absolute;top:0;left:100%;min-width:250px;display:none}
+/*******/
+.mainmenu .collapse ul ul ul li{position:relative}
+.mainmenu .collapse ul ul ul li:hover ul{display:block}
+.mainmenu .collapse ul ul ul ul{position:absolute;top:0;left:-100%;min-width:250px;display:none;z-index:1}
+
+}
+@media only screen and (max-width: 767px) {
+.navbar-nav .show .dropdown-menu .dropdown-menu > li > a{padding:16px 15px 16px 35px}
+.navbar-nav .show .dropdown-menu .dropdown-menu .dropdown-menu > li > a{padding:16px 15px 16px 45px}
+}
+
+.outer-transition> form-control{
+
+    width: 100%;
+    padding: 15px 20px;
+    margin-top: 30px;
+    border: 0;
+    background: #f0f4f8;
+    outline: none;
+    font-size: 12px;
+    line-height: 1;
+    font-style: italic;
+    color: #828282;
+}
+
 /*--------------------------------------------------------------
 # Site Header
 --------------------------------------------------------------*/
@@ -344,7 +403,7 @@ transition: .5s ease-in-out;
 ----------------------------------*/
 .button {
     padding: 12px 50px 10px;
-    margin-right: 32px;
+    margin-right: 5px;
     border: 0;
     border-bottom: 3px solid #18a3eb;
     border-radius: 20px;

@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/swiper.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/swiper.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
 
     <link rel="stylesheet" href="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.css">
@@ -30,7 +31,7 @@
 </head>
 <body>
   <header class="site-header" style="{{'position: relative;padding: 220px 0 140px;background-color: #f0f4f8;' if not slider else ''}}">
-    <div class="nav-bar" id="mynav" style="{{add_style_if_ar('direction: rtl;text-align: right;', 'direction: ltr;text-align: left;')}} background:linear-gradient(90deg, rgb(66 134 210) 0%, rgb(88 125 228 / 0%) 100%);">
+    <div class="nav-bar" id="mynav" style="{{add_style_if_ar('direction: rtl;text-align: right;', 'direction: ltr;text-align: left;')}} background:linear-gradient({{add_style_if_ar('','-')}}90deg, rgb(66 134 210) 0%, rgb(88 125 228 / 0%) 100%);">
         <div class="container">
             <div class="row">
                 <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
@@ -187,6 +188,13 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                               <li><a href="{{url_for('main.contact', locale = request.args.get('locale'))}}">{{_('FAQ')}}</a></li>
                           </ul>
                       </div><!-- .foot-links -->
+                      <h5>Follow Us</h5>
+            <ul class="social-network social-circle">
+             <li><a href="https://www.facebook.com/pages/%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D8%A8%D9%88%D8%A7%D8%B3%D9%8A%D8%B1-%D8%A8%D8%A7%D9%84%D9%84%D9%8A%D8%B2%D8%B1/133973336781153?ref=hl" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+             <li><a href="http://amanaclinic.blogspot.com/" class="icoLinkedin" title="Linkedin"><i class="fa fa-rss"></i></a></li>
+             <li><a href="https://twitter.com/amanaclinic3" class="icoLinkedin" title="Linkedin"><i class="fa fa-twitter"></i></a></li>
+             <li><a href="https://www.youtube.com/user/amanaclinic" class="icoLinkedin" title="Linkedin"><i class="fa fa-youtube"></i></a></li>
+            </ul>				
                   </div><!-- .col -->
               </div><!-- .row -->
           </div><!-- .container -->

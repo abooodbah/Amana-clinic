@@ -3,7 +3,7 @@
 
 <div class="swiper-container hero-slider">
   <div class="swiper-wrapper">
-      <div class="swiper-slide hero-content-wrap" style="background-image: url('static/img/logo-long.png')">
+      <div class="swiper-slide hero-content-wrap fade" style="background-image: url('static/img/logo-long-2.png')">
           <div class="hero-content-overlay position-absolute w-100 h-100">
               <div class="container h-100">
                   <div class="row h-100">
@@ -81,7 +81,7 @@
       
           <label for="defaultSelect">{{_('Book an Appointment')}}</label>
           <div class="row">
-          <div class="col-12  col-md-4">
+          <div class="col-12  col-md-4 fade">
             <div class="form-group">
               {{ bookingform.service.label(class="form-control-label") }}
               {% if bookingform.service.errors %}
@@ -100,7 +100,7 @@
             {% endif %}
               </div>
         </div>
-        <div class="col-12  col-md-4">
+        <div class="col-12  col-md-4 fade">
                             <div class="form-group">
                       {{ bookingform.name.label(class="form-control-label") }}
                       {% if bookingform.name.errors %}
@@ -119,7 +119,7 @@
                     {% endif %}
                       </div>
     </div>
-          <div class="col-12  col-md-4">
+          <div class="col-12  col-md-4 fade">
                             <div class="form-group">
                       {{ bookingform.phone.label(class="form-control-label") }}
                       {% if bookingform.phone.errors %}
@@ -140,7 +140,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-12  col-md-6">
+    <div class="col-12  col-md-6 fade">
       <div class="form-group">
         {{ bookingform.email.label(class="form-control-label") }}
         {% if bookingform.email.errors %}
@@ -160,7 +160,7 @@
         </div>
         </div>
   
-        <div class="col-12  col-md-6">
+        <div class="col-12  col-md-6 fade">
             <div class="form-group">
                       {{ bookingform.date.label(class="form-control-label") }}
                       {% if bookingform.date.errors %}
@@ -180,7 +180,7 @@
                       </div>
           </div>
           </div>
-          <div class="col-12">
+          <div class="col-12 fade">
             <div class="form-group">
               {{ bookingform.message.label(class="form-control-label") }}
               {% if bookingform.message.errors %}
@@ -198,7 +198,7 @@
             </div>
             {% endif %}
               </div>                </div>    
-          {{ bookingform.submit(class="button gradient-bg", style="width: -moz-available;width: -webkit-fill-available; ", type="submit") }}
+          {{ bookingform.submit(class="button gradient-bg swing", style="width: -moz-available;width: -webkit-fill-available; ", type="submit") }}
         </fieldset>
           {{ bookingform.csrf_token }}
         </form>
@@ -245,34 +245,28 @@
     
         <!-- Card content -->
         <div class="card-body" style="{{add_style_if_ar('direction: rtl;text-align: right;', 'direction: ltr;text-align: left;')}}">
-          <p class="h5 font-weight-bold mb-4">{{_('Opening hours')}}</p>
-          <ul class="list-unstyled d-flex justify-content-start mb-0">
-            <li style="font-size: 10pt;">{{_('Sunday - Thursday')}}</li>
-            <li>
-              <div class="chip ml-3">5:00pM</div>
-            </li>
-            <li>
-              <div class="chip ml-0 mr-0">10:00AM</div>
-            </li>
-          </ul>
-          <ul class="list-unstyled d-flex justify-content-start mb-0">
-            <li style="font-size: 10pt;">{{_('Saturday')}}</li>
-            <li>
-              <div class="chip ml-3">9:00AM</div>
-            </li>
-            <li>
-              <div class="chip ml-0 mr-0">7:00PM</div>
-            </li>
-          </ul>
-          <ul class="list-unstyled d-flex justify-content-start mb-0">
-            <li style="font-size: 10pt;">{{_('Friday')}}</li>
-            <li>
-              <div class="chip ml-3">{{_('CLOSED')}}</div>
-            </li>
-          </ul>
-          <footer class="entry-footer">
-            <a href="#">{{_('read more')}}</a>
-        </footer>
+          <p class="card-title font-weight-bold mb-4">{{_('Stats')}}</p>
+          
+<div class="container">
+  <div class="stats">
+    <div class="clientrev">
+      <span>312</span>
+      <p>{{_('Successful Surgeries')}}</p>
+    </div>
+    <div class="adspend">
+      <span>712</span>
+      <p>{{_('patients')}}</p>
+    </div>
+    <div class="maus">
+      <span>122</span>
+      <p>{{_('Successful LHP')}}</p>
+    </div>
+    <div class="roi">
+      <span>+20</span>
+      <p>{{_('Years of Experience')}}</p>
+    </div>
+  </div>
+</div>
         </div>
     
       </div>

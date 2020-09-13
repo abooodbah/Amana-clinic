@@ -53,7 +53,7 @@ def contact():
                   recipients=[contactform.email.data])
         msg.body = f'''from: {contactform.email.data}
 Sender: {contactform.name.data}
-
+Appointment Date: {contactform.date.data}
 {contactform.message.data}
                 '''
         msg.attach("image.png", "image/png", contactform.image.data.read())  
@@ -77,7 +77,7 @@ Service: {bookingform.service.data}
     
     return render_template('contact.html', contactform = contactform, bookingform = bookingform)
 
-@main.route("/")
+@main.route("/", methods=['GET', 'POST'])
 @main.route("/home", methods=['GET', 'POST'])
 def home():
     FAQs = FAQ.query

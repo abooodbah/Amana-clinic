@@ -222,6 +222,62 @@ transition: .5s ease-in-out;
     transition: all 0.35s;
 }
 
+.fade {
+    opacity: 0;
+  }
+
+
+  .stats{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3em;
+    position: relative;
+  }
+  
+  .stats span{
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  
+  .stats p{
+    font-size: 0.7rem;
+    margin-left: 2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--text-clr-light);
+    color: #38bcf7;
+  }
+  
+  @media screen and (max-width: 450px){
+  .swiper-wrapper{
+    margin-top: 65px!important;
+  }
+
+}
+
+  .stats::before, .stats::after{
+    content: '';
+    position: absolute;
+  }
+  
+  .stats::before{
+    top: 50%;
+    left: -5%;
+    width: 110%;
+    height: 1px;
+    background: var(--text-clr-light);
+  }
+  
+  .stats::after{
+    left: 50%;
+    top: -5%;
+    width: 0.8px;
+    height: 90%;
+    background: var(--text-clr-light);
+  }
+  
+  
+
 .site-navigation.show ul {
     left: 0;
 }

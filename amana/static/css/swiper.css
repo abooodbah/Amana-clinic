@@ -18,6 +18,12 @@
   /* Fix of Webkit flickering */
   z-index: 1;
 }
+@media screen and (max-width: 350px){
+  .swiper-container{
+    margin-top: 65px!important;
+  }
+
+}
 .swiper-container-no-flexbox .swiper-slide {
   float: left;
 }

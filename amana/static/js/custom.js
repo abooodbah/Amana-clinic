@@ -74,7 +74,7 @@
         var url = new URL(url_string);
         var param = url.searchParams.get("service");
         console.log(param);
-        $('.tab-nav:nth-child(1)').trigger('click');
+        $('.tab-nav:nth-child(' + param + ')').trigger('click');
     });
 
     // Circular Progress Bar

@@ -216,9 +216,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                           <ul class="p-0 m-0">
                               <li><a href="{{url_for('main.home', locale = request.args.get('locale'))}}">{{_('Home')}}</a></li>
                               <li><a href="{{url_for('main.about', locale = request.args.get('locale'))}}">{{_('About us')}}</a></li>
-                              <li><a href="{{url_for('main.services', locale = request.args.get('locale'))}}">{{_('Services')}}</a></li>
+                              <li><a href="{{url_for('main.services', locale = request.args.get('locale'), type = 'main', service= '1')}}">{{_('Services')}}</a></li>
                               <li><a href="{{url_for('main.contact', locale = request.args.get('locale'))}}">{{_('Contact')}}</a></li>
-                              <li><a href="{{url_for('main.contact', locale = request.args.get('locale'))}}">{{_('control_panel')}}</a></li>
+                              <li><a href="{{url_for('users.login', locale = request.args.get('locale'))}}">{{_('control_panel')}}</a></li>
                               <li><a href="{{url_for('main.contact', locale = request.args.get('locale'))}}">{{_('FAQ')}}</a></li>
                           </ul>
                       </div><!-- .foot-links -->

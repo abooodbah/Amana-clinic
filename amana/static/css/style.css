@@ -703,6 +703,7 @@ ul.tabs-nav .tab-nav.active {
     background: linear-gradient(270deg, rgba(50,200,250,1) 0%, rgba(88,125,228,1) 100%); /* w3c */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#18a3eb', endColorstr='#18a3eb',GradientType=1 ); /* ie6-9 */
     color: #fff;
+    min-width: 15vw;
 }
 
 .tabs .tab-nav {

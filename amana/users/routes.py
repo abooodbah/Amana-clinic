@@ -35,7 +35,7 @@ def login():
             login_user(user, remember=form.remember.data)
             print("success")
             next_page = request.args.get('next')
-            return redirect(url_for('/admin'))
+            return redirect(url_for('admin.index'))
         else:
             flash('Login Unsuccessful. Please check email and password', 'danger')
     return render_template('login.html', title='Login', form=form)

@@ -236,34 +236,29 @@
 
   <!-- Card content -->
   <div class="card-body" style="{{add_style_if_ar('direction: rtl;text-align: right;', 'direction: ltr;text-align: left;')}}">
-    <p class="h5 font-weight-bold mb-4">{{_('Opening hours')}}</p>
-    <ul class="list-unstyled d-flex justify-content-start mb-0">
-      <li style="font-size: 10pt;">{{_('Sunday - Thursday')}}</li>
-      <li>
-        <div class="chip ml-3">5:00pM</div>
-      </li>
-      <li>
-        <div class="chip ml-0 mr-0">9:00pM</div>
-      </li>
-    </ul>
-    <ul class="list-unstyled d-flex justify-content-start mb-0">
-      <li style="font-size: 10pt;">{{_('Saturday')}}</li>
-      <li>
-        <div class="chip ml-3">5:00pM</div>
-      </li>
-      <li>
-        <div class="chip ml-0 mr-0">9:00pM</div>
-      </li>
-    </ul>
-    <ul class="list-unstyled d-flex justify-content-start mb-0">
-      <li style="font-size: 10pt;">{{_('Friday')}}</li>
-      <li>
-        <div class="chip ml-3">{{_('CLOSED')}}</div>
-      </li>
-    </ul>
-    <footer class="entry-footer">
-      <a href="#">{{_('read more')}}</a>
-  </footer>
+    <p class="card-title font-weight-bold mb-4">{{_('Stats')}}</p>
+          
+    <div class="container">
+      <div class="stats">
+        <div class="clientrev">
+          <span>+11000</span>
+          <p>{{_('Successful Surgeries')}}</p>
+        </div>
+        <div class="adspend">
+          <span>+15000</span>
+          <p>{{_('patients')}}</p>
+        </div>
+    
+        <div class="roi">
+          <span>+23</span>
+          <p>{{_('Years of Experience')}}</p>
+        </div>
+        <div class="maus" style="display: none;">
+          <span>122</span>
+          <p>{{_('Successful LHP')}}</p>
+        </div>
+      </div>
+    </div>
   </div>
 
 </div>

@@ -43,7 +43,7 @@
                         <li class="current-menu-item"><a href="{{url_for('main.home', locale = request.args.get('locale'))}}">{{_('Home')}}</a></li>
                         <li><a href="{{url_for('main.about', locale = request.args.get('locale'))}}">{{_('About us')}}</a></li>
                         <li class="topmenu">
-                          <a >{{_('Services')}}</a>
+                          <a > {{_('Services')}}</a>
                           <ul class="submenu">
                           
                             {%for Service in mainServices%}
@@ -51,7 +51,7 @@
                             <li><a href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = 'main' )}}">{{add_style_if_ar(Service.title_ar,Service.title_en)}}</a></li>
                             {%else%}
                             <li>
-                            <a >{{add_style_if_ar(Service.title_ar,Service.title_en)}}</a>
+                            <a > {{add_style_if_ar(Service.title_ar,Service.title_en)}} <i class="{{add_style_if_ar('fa fa-arrow-left','fa fa-arrow-right' )}}" aria-hidden="true"></i></a>
                             
                             <ul class="submenu" aria-labelledby="navbarDropdownMenuLink" style="border: none!important;">
                               {%for subservice in Service.subservices%}
@@ -203,7 +203,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
                           <ul class="p-0 m-0">
                               <li><span>{{_('Address')}}:</span>{{add_style_if_ar('الامارات العربية المتحدة – أبو ظبي – الكورنيش – خلف برج بينونة', 'Corniche Rd W - Al Markaziyah West - Abu Dhabi')}}</li>
-                              <li><span>{{_('Phone')}}:</span><div style="direction: ltr;"> 02 622 8660</div></li>
+                              <li><span>{{_('Phone')}}:</span><div style="direction: ltr;"> +971 2 622 8660</div></li>
                               <li><span>{{_('Email')}}:</span><a href="mailto:Aamana_clinic@hotmail.com">Aamana_clinic@hotmail.com</a></li>
                           </ul>
                       </div>

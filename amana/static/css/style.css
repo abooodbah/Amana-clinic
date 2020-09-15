@@ -1445,7 +1445,6 @@ display: none;
 
 .faq-stuff {
     padding: 100px 0;
-    background: url("images/faq-bg.jpg") no-repeat;
     background-size: cover;
 }
 
@@ -1456,9 +1455,7 @@ display: none;
     color: #fff;
 }
 
-.faq-stuff .accordion-wrap .entry-content p {
-    color: #fff;
-}
+
 
 .professional-box,
 .quality-box {

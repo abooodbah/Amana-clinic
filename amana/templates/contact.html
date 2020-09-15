@@ -115,15 +115,15 @@
                       {% endfor %}
                   </div>
                   {% else %}
-                  <div class="outer-transition">
-                      {{ contactform.message(class="form-control form-control-lg mt-0" , style="height: 150px;") }}
+                  <div class="">
+                      {{ contactform.message(class="form-control form-control-lg mt-0" , style="height: 80px;") }}
                   </div>
                   {% endif %}
                     </div>                </div>
                     <div class="col-12">
                   <div class="form-group">
                     {{ contactform.image.label() }}
-                    <div class="outer-transition">
+                    <div class="">
                     {{ contactform.image(class="contactform-control", style="padding-top: 3px;") }}
                     
                 </div>
@@ -148,7 +148,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="contact-page-map">
-                    <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=amana clinic&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=عيادة+أمانة+التخصصية+-+علاج+البواسير+بالليزر&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                 </div><!-- map -->
             </div>
         </div>
@@ -173,28 +173,9 @@
         <p class="h4 mb-4 text-center">{{_('Book an Appointment')}}</p>
     
     
-        <label for="defaultSelect">{{_('Book an Appointment')}}</label>
+        
         <div class="row">
-        <div class="col-12  col-md-4">
-          <div class="form-group">
-            {{ bookingform.service.label(class="form-control-label") }}
-            {% if bookingform.service.errors %}
-            <div class="outer-transition">
-            {{ bookingform.service(class="form-control           form-control-lg is-invalid") }}
-          </div>
-          <div class="invalid-feedback">
-              {% for error in bookingform.service.errors %}
-              <span style="display: block;">{{ error }}</span>
-              {% endfor %}
-          </div>
-          {% else %}
-          <div class="outer-transition">
-              {{ bookingform.service(class="form-control form-control-lg mt-0 browser-default custom-select mb-4 booking-form-field booking-form-field") }}
-          </div>
-          {% endif %}
-            </div>
-      </div>
-      <div class="col-12  col-md-4">
+      <div class="col-12  col-md-6">
                           <div class="form-group">
                     {{ bookingform.name.label(class="form-control-label") }}
                     {% if bookingform.name.errors %}
@@ -213,7 +194,7 @@
                   {% endif %}
                     </div>
   </div>
-        <div class="col-12  col-md-4">
+        <div class="col-12  col-md-6">
                           <div class="form-group">
                     {{ bookingform.phone.label(class="form-control-label") }}
                     {% if bookingform.phone.errors %}
@@ -274,9 +255,8 @@
                     </div>
         </div>
         </div>
-        <div class="col-12">
+        <div class="col-12" style="padding: 0px;">
           <div class="form-group">
-            {{ bookingform.message.label(class="form-control-label") }}
             {% if bookingform.message.errors %}
             <div class="outer-transition">
             {{ bookingform.message(class="form-control           form-control-lg is-invalid") }}
@@ -288,7 +268,7 @@
           </div>
           {% else %}
           <div class="outer-transition">
-              {{ bookingform.message(class="form-control form-control-lg mt-0" , style="height: 150px;") }}
+            {{ bookingform.message(class="form-control form-control-lg mt-0" , style="height: 80px;", placeholder=bookingform.message.label.text) }}
           </div>
           {% endif %}
             </div>                </div>    
@@ -315,14 +295,31 @@
       <div class="card-body" style="{{add_style_if_ar('direction: rtl;text-align: right;', 'direction: ltr;text-align: left;')}}">
   
         <!-- Title -->
-        <h4 class="card-title font-weight-bold mb-4"><a>{{_('What we do At Amana Clinic')}}</a></h4>
+        <h4>{{_('Contact')}}</h4>
         <!-- Data -->
   
         <!-- Text -->
-        <p class="card-text">{{add_style_if_ar(info.Introduction_ar, info.Introduction_en)}}</p>
-        <footer class="entry-footer">
-          <a href="#">{{_('read more')}}</a>
-      </footer>
+        <p class="card-text">                    
+              <span style="padding: 0 5px;">{{_('Address')}}:</span>{{add_style_if_ar('الامارات العربية المتحدة – أبو ظبي – الكورنيش – خلف برج بينونة', 'Corniche Rd W - Al Markaziyah West - Abu Dhabi')}}
+        </p>
+        <div class="card-text" style="display: flex; margin-bottom: 1rem;">                    
+        
+          <span style="padding: 0 5px;">{{_('Phone')}}:</span><div style="direction: ltr;"><a href="tel:+97126228660" style="direction: ltr;">  +971 2 622 8660</a>  </div>      </div>
+
+          <div class="card-text" style="display: flex; margin-bottom: 1rem;">                    
+        
+            <span style="padding: 0 5px;">{{_('Fax')}}:</span><div style="direction: ltr;"><a  style="direction: ltr;">  +971 2 622 8662</a>  </div>      </div>
+
+          <div class="card-text" style="display: flex; margin-bottom: 1rem;">                    
+        
+            <span style="padding: 0 5px;">{{_('Mobile phone')}}:</span><div style="direction: ltr;"><a href="tel:+971503153009" style="direction: ltr;">  +971 50 315 3009</a>  </div>      </div>
+
+                      <p class="card-text">                    
+        
+              <span style="padding: 0 5px;">{{_('Email')}}:</span><a href="mailto:Aamana_clinic@hotmail.com">Aamana_clinic@hotmail.com</a>        </p>
+
+          
+
       </div>
   
     </div>

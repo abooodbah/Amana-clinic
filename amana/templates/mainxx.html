@@ -79,28 +79,9 @@
           <p class="h4 mb-4 text-center">{{_('Book an Appointment')}}</p>
       
       
-          <label for="defaultSelect">{{_('Book an Appointment')}}</label>
+          
           <div class="row">
-          <div class="col-12  col-md-4 fade">
-            <div class="form-group">
-              {{ bookingform.service.label(class="form-control-label") }}
-              {% if bookingform.service.errors %}
-              <div class="outer-transition">
-              {{ bookingform.service(class="form-control           form-control-lg is-invalid") }}
-            </div>
-            <div class="invalid-feedback">
-                {% for error in bookingform.service.errors %}
-                <span style="display: block;">{{ error }}</span>
-                {% endfor %}
-            </div>
-            {% else %}
-            <div class="outer-transition">
-                {{ bookingform.service(class="form-control form-control-lg mt-0 browser-default custom-select mb-4 booking-form-field booking-form-field") }}
-            </div>
-            {% endif %}
-              </div>
-        </div>
-        <div class="col-12  col-md-4 fade">
+        <div class="col-12  col-md-6 fade">
                             <div class="form-group">
                       {{ bookingform.name.label(class="form-control-label") }}
                       {% if bookingform.name.errors %}
@@ -119,7 +100,7 @@
                     {% endif %}
                       </div>
     </div>
-          <div class="col-12  col-md-4 fade">
+          <div class="col-12  col-md-6 fade">
                             <div class="form-group">
                       {{ bookingform.phone.label(class="form-control-label") }}
                       {% if bookingform.phone.errors %}
@@ -180,9 +161,8 @@
                       </div>
           </div>
           </div>
-          <div class="col-12 fade">
+          <div class="col-12 fade" style="padding: 0px;">
             <div class="form-group">
-              {{ bookingform.message.label(class="form-control-label") }}
               {% if bookingform.message.errors %}
               <div class="outer-transition">
               {{ bookingform.message(class="form-control           form-control-lg is-invalid") }}
@@ -194,7 +174,7 @@
             </div>
             {% else %}
             <div class="outer-transition">
-                {{ bookingform.message(class="form-control form-control-lg mt-0" , style="height: 150px;") }}
+                {{ bookingform.message(class="form-control form-control-lg mt-0" , style="height: 80px;", placeholder=bookingform.message.label.text) }}
             </div>
             {% endif %}
               </div>                </div>    
@@ -225,7 +205,7 @@
           <!-- Data -->
     
           <!-- Text -->
-          <p class="card-text">{{add_style_if_ar(info.Introduction_ar, info.Introduction_en)}}</p>
+          <p class="card-text">{{add_style_if_ar(info.Main_page_intro_details_ar,info.Main_page_intro_details_en)}}</p>
           <footer class="entry-footer">
             <a href="#">{{_('read more')}}</a>
         </footer>
@@ -250,20 +230,21 @@
 <div class="container">
   <div class="stats">
     <div class="clientrev">
-      <span>312</span>
+      <span>+11000</span>
       <p>{{_('Successful Surgeries')}}</p>
     </div>
     <div class="adspend">
-      <span>712</span>
+      <span>+15000</span>
       <p>{{_('patients')}}</p>
     </div>
-    <div class="maus">
+
+    <div class="roi">
+      <span>+23</span>
+      <p>{{_('Years of Experience')}}</p>
+    </div>
+    <div class="maus" style="display: none;">
       <span>122</span>
       <p>{{_('Successful LHP')}}</p>
-    </div>
-    <div class="roi">
-      <span>+20</span>
-      <p>{{_('Years of Experience')}}</p>
     </div>
   </div>
 </div>
@@ -311,7 +292,7 @@
     </div>
 
 
-      <section class="testimonial-section" style="background: url('static/images/news-5.jpg') no-repeat right center; background-size: 742.4px 494.9333px; border-radius: 15px 50px 30px 5px; border-radius: 0rem 25rem 25rem 0rem;">
+      <section class="testimonial-section">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -346,7 +327,52 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-12 col-lg" style="place-self: center;">
+                      <ul class="social-network social-circle">
+                        <li><a href="https://www.facebook.com/amana.clinic1" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="http://amanaclinic.blogspot.com/" class="icoBlogpost" title="Blogpost"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="https://www.instagram.com/amana_clinic_/" class="icoInstagram" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="https://www.youtube.com/user/amanaclinic" class="icoYoutube" title="Youtube"><i class="fa fa-youtube"></i></a></li>                     </ul>	
+                         </ul>	
+
+
+                    </div>
                 </div>
+
+
+                <div class="row" style="margin-top:2rem;">
+                  <div class="col-12 col-lg-9 order-last">
+                      <div class="testimonial-bg-shape">
+                          <div class="swiper-container testimonial-slider-wrap" style="{{add_style_if_ar('direction: rtl;text-align: right;', 'direction: ltr;text-align: left;')}}">
+                              <div class="">
+                                  <div class="">
+                                      <div class="entry-content">
+                                          <p>{{_('nurse_info')}}</p>
+                                      </div><!-- .entry-content -->
+
+                                      <div class="entry-footer">
+                                          <figure class="user-avatar">
+                                              <img src="static/img/nurse-square.jpg" alt="">
+                                          </figure><!-- .user-avatar -->
+
+                                          <h3 class="testimonial-user">{{_('Nurse')}} <span>{{add_style_if_ar('ممرضة مرخصة من هيئة ابو ظبي', 'Certified Nurse')}}</span></h3>
+                                      </div><!-- .entry-footer -->
+                                  </div><!-- .swiper-slide -->
+                              </div><!-- .swiper-wrapper -->
+
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-12 col-lg" style="place-self: center;">
+                    <ul class="social-network social-circle">
+                      <li><a href="https://www.facebook.com/amana.clinic1" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="http://amanaclinic.blogspot.com/" class="icoBlogpost" title="Blogpost"><i class="fa fa-rss"></i></a></li>
+                      <li><a href="https://www.instagram.com/amana_clinic_/" class="icoInstagram" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+                      <li><a href="https://www.youtube.com/user/amanaclinic" class="icoYoutube" title="Youtube"><i class="fa fa-youtube"></i></a></li>                     </ul>	
+
+
+                  </div>
+              </div>
             </div>
         </div><!-- .testimonial-slider -->
     </section><!-- .testimonial-section -->

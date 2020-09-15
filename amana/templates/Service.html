@@ -19,7 +19,7 @@
 <img class="header-img"  style="{{add_style_if_ar('right: unset;transform: scaleX(-1);' , 'right: 0;')}}position: absolute;top: 0;max-width: 65%;height: auto;" src="static/images/hero-bg-3.png" alt="">
 </header><!-- .site-header -->
 
-
+<main role="main" class="container mb-0 mt-0" >
 <div class="container">
     <div class="row">
         <div class="col-12">
@@ -38,19 +38,18 @@
                       
                         <div class="tab_{{ service.id }} tab-content" style="display: block;">
                             <img src="static/images/services/{{ service.id }}.jpg" alt="" style="max-width: 290px;">
+                        <h4 style="font-size: {{service.title_Font_size if service.title_Font_size else ''}}pt; color:{{service.title_font_color if service.title_font_color else ''}};">{{add_style_if_ar(service.title_ar,service.title_en)}} </h4>
 
-                        <h4 style="font-size: {{service.title_Font_size if service.title_Font_size else ''}}pt;">{{add_style_if_ar(service.title_ar,service.title_en)}} </h4>
-
-                            <p>{{add_style_if_ar(service.content_ar,service.content_en)}}</p>
+                            <p style="font-size: {{service.content_Font_size if service.content_Font_size else ''}}pt; color:{{service.content_font_color if service.content_font_color else ''}};">{{add_style_if_ar(service.content_ar,service.content_en)}}</p>
                         </div>
                         {%for subservice in service.subservices %}
                         
                         <div class="tab_{{ service.id }} tab-content" style="display: block; {{'background:#d3d3d34a;' if ((loop.index) %2 == 1)  else ''}}">
                           <img src="static/images/services/{{ service.id }}_{{ subservice.id }}.jpg" alt="" style="max-width: 290px;">
 
-                          <h4 style="font-size: {{(service.title_Font_size -2) if service.title_Font_size else ''}}pt;">{{add_style_if_ar(subservice.title_ar,subservice.title_en)}} </h4>
+                          <h4 style="font-size: {{subservice.title_Font_size -2 if subservice.title_Font_size else ''}}pt; color:{{subservice.title_font_color if subservice.title_font_color else ''}};">{{add_style_if_ar(subservice.title_ar,subservice.title_en)}} </h4>
 
-                          <p>{{add_style_if_ar(subservice.content_ar,subservice.content_en)}}</p>
+                          <p style="font-size: {{subservice.content_Font_size if subservice.content_Font_size else ''}}pt; color:{{subservice.content_font_color if subservice.content_font_color else ''}};">{{add_style_if_ar(subservice.content_ar,subservice.content_en)}}</p>
                       </div>
                         {%endfor%}
                         
@@ -90,28 +89,10 @@
     <p class="h4 mb-4 text-center">{{_('Book an Appointment')}}</p>
 
 
-    <label for="defaultSelect">{{_('Book an Appointment')}}</label>
+    
     <div class="row">
-    <div class="col-12  col-md-4">
-      <div class="form-group">
-        {{ bookingform.service.label(class="form-control-label") }}
-        {% if bookingform.service.errors %}
-        <div class="outer-transition">
-        {{ bookingform.service(class="form-control           form-control-lg is-invalid") }}
-      </div>
-      <div class="invalid-feedback">
-          {% for error in bookingform.service.errors %}
-          <span style="display: block;">{{ error }}</span>
-          {% endfor %}
-      </div>
-      {% else %}
-      <div class="outer-transition">
-          {{ bookingform.service(class="form-control form-control-lg mt-0 browser-default custom-select mb-4 booking-form-field booking-form-field") }}
-      </div>
-      {% endif %}
-        </div>
-  </div>
-  <div class="col-12  col-md-4">
+
+  <div class="col-12  col-md-6">
                       <div class="form-group">
                 {{ bookingform.name.label(class="form-control-label") }}
                 {% if bookingform.name.errors %}
@@ -130,7 +111,7 @@
               {% endif %}
                 </div>
 </div>
-    <div class="col-12  col-md-4">
+    <div class="col-12  col-md-6">
                       <div class="form-group">
                 {{ bookingform.phone.label(class="form-control-label") }}
                 {% if bookingform.phone.errors %}
@@ -191,9 +172,8 @@
                 </div>
     </div>
     </div>
-    <div class="col-12">
+    <div class="col-12" style="padding: 0px;">
       <div class="form-group">
-        {{ bookingform.message.label(class="form-control-label") }}
         {% if bookingform.message.errors %}
         <div class="outer-transition">
         {{ bookingform.message(class="form-control           form-control-lg is-invalid") }}
@@ -205,7 +185,7 @@
       </div>
       {% else %}
       <div class="outer-transition">
-          {{ bookingform.message(class="form-control form-control-lg mt-0" , style="height: 150px;") }}
+        {{ bookingform.message(class="form-control form-control-lg mt-0" , style="height: 80px;", placeholder=bookingform.message.label.text) }}
       </div>
       {% endif %}
         </div>                </div>    

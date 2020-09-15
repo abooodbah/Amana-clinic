@@ -3,7 +3,7 @@ from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField, SelectField
 from wtforms.fields.html5 import DateField
-from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
+from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError,Optional
 from flask_login import current_user
 from amana.models import User, Service
 from amana import add_style_if_ar
@@ -18,12 +18,12 @@ class ContactForm(FlaskForm):
     subject = StringField(_('Subject'),
                         validators=[DataRequired(), Email()])
     message = TextAreaField(_('Message'),
-                        validators=[DataRequired(), Email()])
-    image =  FileField(_('upload the file'), validators=[DataRequired(),FileAllowed(['jpg', 'png', 'svg'])])
+                        validators=[Optional(), Email()])
+    image =  FileField(_('upload the file'), validators=[Optional(),FileAllowed(['jpg', 'png', 'svg'])])
     submit = SubmitField(_('Send Message'))
 
 class BookingForm(FlaskForm):
-    service = SelectField(_('Choose a medical service'), choices=[])
+    service = SelectField(_('Choose a medical service'),validators=[Optional()])
     name = StringField(_('name'),
                         validators=[DataRequired(), Email()])
     phone = StringField(_('phone'),
@@ -33,7 +33,7 @@ class BookingForm(FlaskForm):
     date =  DateField(_('Date'),
                         validators=[DataRequired()], default=datetime.date(datetime.now()))
     message = TextAreaField(_('Message'),
-                        validators=[DataRequired(), Email()])
+                        validators=[Optional(), Email()])
     submit = SubmitField(_('Send Message'))
 
 

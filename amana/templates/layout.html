@@ -37,12 +37,66 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
-                    <div class="site-branding site-navigation d-flex align-items-center">
-                       <a class="d-block" href="index.html" rel="home"><img class="d-block" src="static/img/logo g.png" alt="logo" style="width: 100px;;"></a>
+                    <div class="site-branding site-navigation d-flex align-items-center cm-e-menu">
+                       <a class="d-block" href="index.html" rel="home"><img class="d-block" src="static/img/logo.png" alt="logo" style="width: 100px;;"></a>
                        <ul class="d-flex flex-column flex-lg-row justify-content-lg-end align-items-center">
                         <li class="current-menu-item"><a href="{{url_for('main.home', locale = request.args.get('locale'))}}">{{_('Home')}}</a></li>
                         <li><a href="{{url_for('main.about', locale = request.args.get('locale'))}}">{{_('About us')}}</a></li>
-                        <li class="nav-item dropdown">
+                        <li class="topmenu">
+                          <a >{{_('Services')}}</a>
+                          <ul class="submenu">
+                          
+                            {%for Service in mainServices%}
+                            {%if not Service.subservices%}
+                            <li><a href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = 'main' )}}">{{add_style_if_ar(Service.title_ar,Service.title_en)}}</a></li>
+                            {%else%}
+                            <li>
+                            <a >{{add_style_if_ar(Service.title_ar,Service.title_en)}}</a>
+                            
+                            <ul class="submenu" aria-labelledby="navbarDropdownMenuLink" style="border: none!important;">
+                              {%for subservice in Service.subservices%}
+                              <li><a class="dropdown-item" href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = 'main' )}}">{{add_style_if_ar(subservice.title_ar,subservice.title_en)}}</a></li>
+                              {%endfor%}
+                            </ul>
+                          </li>
+                            {%endif%}
+                            {%endfor%}
+                          </ul>
+                          
+                        </li>
+                        <!-- Dropdown -->
+                        <li class="topmenu">
+                          <a>{{_('LHP')}}</a>
+                          <ul class="submenu" style="border: #00000055 1px solid; border-radius: 10px; background:white;">
+
+                            {%for Service in hemorrhiodsServices%}
+                            {%if not Service.subservices%}
+                            <li><a class="dropdown-item" href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = hemorrhoids )}}">{{add_style_if_ar(Service.title_ar,Service.title_en)}}</a></li>
+                            {%else%}
+                            <li><a>{{add_style_if_ar(Service.title_ar,Service.title_en)}}</a>
+                            
+                            <ul class="submenu" aria-labelledby="navbarDropdownMenuLink" style="border: none!important;">
+                              {%for subservice in Service.subservices%}
+                              <li><a class="dropdown-item" href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = hemorrhoids )}}">{{add_style_if_ar(subservice.title_ar,subservice.title_en)}}</a></li>
+                              {%endfor%}
+                            </ul>
+                          </li>
+                            {%endif%}
+                            {%endfor%}
+                          
+                          </ul>
+                        </li>
+                        <li><a href="{{url_for('main.contact', locale = request.args.get('locale'))}}">{{_('Contact')}}</a></li>
+                        <li class="blue-bg" style="border-radius: 120px;background:linear-gradient(270deg, rgba(50,200,250,1) 0%, rgba(88,125,228,1) 100%)!important; box-shadow: 2px 2px 4px #0069d969, -2px -2px 4px #008dff73;"><a style="color: white; max-height: fit-content;padding: 15px;margin: 0;" class="scroll-link" href="#booking">{{_('Book an Appointment')}}</a></li>
+                        </ul>
+                    
+                    </div><!-- .site-branding -->
+
+                    <nav class="site-navigation d-flex justify-content-end align-items-center">
+                        <ul class="d-flex flex-column flex-lg-row justify-content-lg-end align-items-center">
+                            <li class="mobile"><a href="{{url_for('main.home', locale = request.args.get('locale'))}}">{{_('Home')}}</a></li>
+                            <li class="mobile"><a href="{{url_for('main.about', locale = request.args.get('locale'))}}">{{_('About us')}}</a></li>
+                            <li class="mobile nav-item dropdown">
                           <a class= "dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                           aria-haspopup="true" aria-expanded="false" href="#">{{_('Services')}}</a>
                           <ul class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink" style="border: #35c3f9 2px solid; border-radius: 10px; background:white;">
@@ -66,54 +120,32 @@
                           </ul>
                           
                         </li>
-                        <!-- Dropdown -->
-      <li class="nav-item dropdown">
-        <a class= "dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false" href="#">{{_('LHP')}}</a>
-        <ul class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink" style="border: #35c3f9 2px solid; border-radius: 10px; background:white;">
+                        <li class="mobile nav-item dropdown">
+                          <a class= "dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false" href="#">{{_('LHP')}}</a>
+                          <ul class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink" style="border: #35c3f9 2px solid; border-radius: 10px; background:white;">
 
-          {%for Service in hemorrhiodsServices%}
-          {%if not Service.subservices%}
-          <li><a class="dropdown-item" href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = hemorrhoids )}}">{{add_style_if_ar(Service.title_ar,Service.title_en)}}</a></li>
-          {%else%}
-          <li><a class= "dropdown-item dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false" href="#">{{add_style_if_ar(Service.title_ar,Service.title_en)}}</a>
-          
-          <ul class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink" style="border: none!important;">
-            {%for subservice in Service.subservices%}
-            <li><a class="dropdown-item" href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = hemorrhoids )}}">{{add_style_if_ar(subservice.title_ar,subservice.title_en)}}</a></li>
-            {%endfor%}
-          </ul>
-        </li>
-          {%endif%}
-          {%endfor%}
-        
-        </ul>
-      </li>
-                        <li><a href="{{url_for('main.contact', locale = request.args.get('locale'))}}">{{_('Contact')}}</a></li>
-                        <li style="border-radius: 120px;background:linear-gradient(270deg, rgba(50,200,250,1) 0%, rgba(88,125,228,1) 100%)!important;"><a style="color: white; max-height: fit-content;padding: 15px;margin: 0;" class="scroll-link" href="#booking">{{_('Book an Appointment')}}</a></li>
-                        </ul>
-                    
-                    </div><!-- .site-branding -->
-
-                    <nav class="site-navigation d-flex justify-content-end align-items-center">
-                        <ul class="d-flex flex-column flex-lg-row justify-content-lg-end align-items-center">
-                            <li class="mobile"><a href="{{url_for('main.home', locale = request.args.get('locale'))}}">{{_('Home')}}</a></li>
-                            <li class="mobile"><a href="{{url_for('main.about', locale = request.args.get('locale'))}}">{{_('About us')}}</a></li>
-                            <li class="mobile"><a href="{{url_for('main.services', locale = request.args.get('locale'))}}">{{_('Services')}}</a></li>
-                            <li class="mobile nav-item dropdown">
-                                <a class= "dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false" href="#">{{_('LHP')}}</a>
-                                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                                  <a class="dropdown-item" href="#">Action</a>
-                                  <a class="dropdown-item" href="#">Another action</a>
-                                  <a class="dropdown-item" href="#">Something else here</a>
-                                  
-                                </div>
-                              </li>
+                            {%for Service in hemorrhiodsServices%}
+                            {%if not Service.subservices%}
+                            <li><a class="dropdown-item" href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = hemorrhoids )}}">{{add_style_if_ar(Service.title_ar,Service.title_en)}}</a></li>
+                            {%else%}
+                            <li><a class= "dropdown-item dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false" href="#">{{add_style_if_ar(Service.title_ar,Service.title_en)}}</a>
+                            
+                            <ul class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink" style="border: none!important;">
+                              {%for subservice in Service.subservices%}
+                              <li><a class="dropdown-item" href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = hemorrhoids )}}">{{add_style_if_ar(subservice.title_ar,subservice.title_en)}}</a></li>
+                              {%endfor%}
+                            </ul>
+                          </li>
+                            {%endif%}
+                            {%endfor%}
+                          
+                          </ul>
+                        </li>
                             <li class="mobile"><a href="{{url_for('main.contact', locale = request.args.get('locale'))}}">{{_('Contact')}}</a></li>
-                            <li class="call-btn button gradient-bg mt-3 mt-md-0" style="direction: ltr;">
-                                <a class="d-flex justify-content-center align-items-center" style="font-family: Segoe UI light;" href="tel:+97126228660"><img src="static/img/phone.svg" style=" width: 25px; filter: invert(100%); "> 02 622 8660</a>
+                            <li class="call-btn button gradient-bg blue-bg mt-3 mt-md-0" style="direction: ltr;box-shadow: 2px 2px 4px #0069d969, -2px -2px 4px #008dff73;">
+                                <a class="d-flex justify-content-center align-items-center " style="font-family: Segoe UI light;" href="tel:+97126228660"><img src="static/img/phone.svg" style=" width: 25px; filter: invert(100%); "> +971 2 622 8660</a>
                             </li>
                             
                             <li style="margin: 0px; display: inline-flex;">
@@ -155,7 +187,7 @@
               <div class="row">
                   <div class="col-12 col-md-6 col-lg-4">
                       <div class="foot-about">
-                          <h2><a href="#"><img src="static/img/logo g.png" alt="" style="width: 100px;"></a></h2>
+                          <h2><a href="#"><img src="static/img/logo.png" alt="" style="width: 100px;"></a></h2>
 
                           <p>{{add_style_if_ar(info.Introduction_ar, info.Introduction_en)}}</p>
 
@@ -170,7 +202,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                           <h2>{{_('Contact')}}</h2>
 
                           <ul class="p-0 m-0">
-                              <li><span>{{_('Address')}}:</span>Corniche Rd W - Al Markaziyah West - Abu Dhabi</li>
+                              <li><span>{{_('Address')}}:</span>{{add_style_if_ar('الامارات العربية المتحدة – أبو ظبي – الكورنيش – خلف برج بينونة', 'Corniche Rd W - Al Markaziyah West - Abu Dhabi')}}</li>
                               <li><span>{{_('Phone')}}:</span><div style="direction: ltr;"> 02 622 8660</div></li>
                               <li><span>{{_('Email')}}:</span><a href="mailto:Aamana_clinic@hotmail.com">Aamana_clinic@hotmail.com</a></li>
                           </ul>
@@ -193,10 +225,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                       <hr>
                       <h5>{{add_style_if_ar('تابعنا ','Follow Us')}}</h5>
             <ul class="social-network social-circle">
-             <li><a href="https://www.facebook.com/pages/%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D8%A8%D9%88%D8%A7%D8%B3%D9%8A%D8%B1-%D8%A8%D8%A7%D9%84%D9%84%D9%8A%D8%B2%D8%B1/133973336781153?ref=hl" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-             <li><a href="http://amanaclinic.blogspot.com/" class="icoLinkedin" title="Linkedin"><i class="fa fa-rss"></i></a></li>
-             <li><a href="https://twitter.com/amanaclinic3" class="icoLinkedin" title="Linkedin"><i class="fa fa-twitter"></i></a></li>
-             <li><a href="https://www.youtube.com/user/amanaclinic" class="icoLinkedin" title="Linkedin"><i class="fa fa-youtube"></i></a></li>
+             <li><a href="https://www.facebook.com/amana.clinic1" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+             <li><a href="http://amanaclinic.blogspot.com/" class="icoBlogpost" title="Blogpost"><i class="fa fa-rss"></i></a></li>
+             <li><a href="https://www.instagram.com/amana_clinic_/" class="icoInstagram" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+             <li><a href="https://www.youtube.com/user/amanaclinic" class="icoYoutube" title="Youtube"><i class="fa fa-youtube"></i></a></li>
             </ul>				
                   </div><!-- .col -->
               </div><!-- .row -->

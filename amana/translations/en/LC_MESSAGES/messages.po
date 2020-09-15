@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-09-13 20:25+0400\n"
+"POT-Creation-Date: 2020-09-15 23:36+0400\n"
 "PO-Revision-Date: 2020-09-05 13:05+0400\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -23,7 +23,7 @@ msgid "name"
 msgstr ""
 
 #: amana/main/forms.py:16 amana/main/forms.py:31
-#: amana/templates/layout.html:175
+#: amana/templates/contact.html:319 amana/templates/layout.html:207
 msgid "Email"
 msgstr ""
 
@@ -68,59 +68,56 @@ msgid "Your appointment has been booked"
 msgstr ""
 
 #: amana/templates/Service.html:6 amana/templates/Service.html:11
-#: amana/templates/layout.html:47 amana/templates/layout.html:103
-#: amana/templates/layout.html:187
+#: amana/templates/layout.html:46 amana/templates/layout.html:101
+#: amana/templates/layout.html:219
 msgid "Services"
 msgstr ""
 
 #: amana/templates/Service.html:10 amana/templates/about.html:10
 #: amana/templates/contact.html:10 amana/templates/layout.html:43
-#: amana/templates/layout.html:101 amana/templates/layout.html:185
+#: amana/templates/layout.html:97 amana/templates/layout.html:217
 msgid "Home"
 msgstr ""
 
-#: amana/templates/Service.html:90 amana/templates/Service.html:93
-#: amana/templates/contact.html:173 amana/templates/contact.html:176
-#: amana/templates/layout.html:94 amana/templates/mainxx.html:79
-#: amana/templates/mainxx.html:82
+#: amana/templates/Service.html:90 amana/templates/contact.html:173
+#: amana/templates/layout.html:90 amana/templates/mainxx.html:79
 msgid "Book an Appointment"
 msgstr "Book an Appointment"
 
-#: amana/templates/Service.html:235 amana/templates/contact.html:318
-#: amana/templates/mainxx.html:224
+#: amana/templates/Service.html:216 amana/templates/mainxx.html:204
 msgid "What we do At Amana Clinic"
 msgstr ""
 
-#: amana/templates/Service.html:241 amana/templates/Service.html:285
-#: amana/templates/contact.html:324 amana/templates/contact.html:368
-#: amana/templates/mainxx.html:20 amana/templates/mainxx.html:42
-#: amana/templates/mainxx.html:230 amana/templates/mainxx.html:301
+#: amana/templates/Service.html:222 amana/templates/Service.html:266
+#: amana/templates/contact.html:365 amana/templates/mainxx.html:20
+#: amana/templates/mainxx.html:42 amana/templates/mainxx.html:210
+#: amana/templates/mainxx.html:282
 msgid "read more"
 msgstr ""
 
-#: amana/templates/Service.html:259 amana/templates/contact.html:342
+#: amana/templates/Service.html:240 amana/templates/contact.html:339
 msgid "Opening hours"
 msgstr ""
 
-#: amana/templates/Service.html:261 amana/templates/contact.html:344
+#: amana/templates/Service.html:242 amana/templates/contact.html:341
 msgid "Sunday - Thursday"
 msgstr ""
 
-#: amana/templates/Service.html:270 amana/templates/contact.html:353
+#: amana/templates/Service.html:251 amana/templates/contact.html:350
 msgid "Saturday"
 msgstr ""
 
-#: amana/templates/Service.html:279 amana/templates/contact.html:362
+#: amana/templates/Service.html:260 amana/templates/contact.html:359
 msgid "Friday"
 msgstr ""
 
-#: amana/templates/Service.html:281 amana/templates/contact.html:364
+#: amana/templates/Service.html:262 amana/templates/contact.html:361
 msgid "CLOSED"
 msgstr ""
 
 #: amana/templates/about.html:6 amana/templates/about.html:11
-#: amana/templates/layout.html:44 amana/templates/layout.html:102
-#: amana/templates/layout.html:186
+#: amana/templates/layout.html:44 amana/templates/layout.html:98
+#: amana/templates/layout.html:218
 msgid "About us"
 msgstr ""
 
@@ -133,8 +130,9 @@ msgid "Faq"
 msgstr ""
 
 #: amana/templates/contact.html:6 amana/templates/contact.html:11
-#: amana/templates/layout.html:93 amana/templates/layout.html:114
-#: amana/templates/layout.html:170 amana/templates/layout.html:188
+#: amana/templates/contact.html:298 amana/templates/layout.html:89
+#: amana/templates/layout.html:146 amana/templates/layout.html:202
+#: amana/templates/layout.html:220
 msgid "Contact"
 msgstr ""
 
@@ -142,35 +140,43 @@ msgstr ""
 msgid "Get in Touch"
 msgstr ""
 
-#: amana/templates/layout.html:72 amana/templates/layout.html:106
-msgid "LHP"
-msgstr ""
-
-#: amana/templates/layout.html:173
+#: amana/templates/contact.html:303 amana/templates/layout.html:205
 msgid "Address"
 msgstr ""
 
-#: amana/templates/layout.html:174
+#: amana/templates/contact.html:307 amana/templates/layout.html:206
 msgid "Phone"
 msgstr ""
 
-#: amana/templates/layout.html:182
+#: amana/templates/contact.html:311
+msgid "Fax"
+msgstr ""
+
+#: amana/templates/contact.html:315
+msgid "Mobile phone"
+msgstr ""
+
+#: amana/templates/layout.html:69 amana/templates/layout.html:125
+msgid "LHP"
+msgstr ""
+
+#: amana/templates/layout.html:214
 msgid "Usefull Links"
 msgstr ""
 
-#: amana/templates/layout.html:189
+#: amana/templates/layout.html:221
 msgid "control_panel"
 msgstr ""
 
-#: amana/templates/layout.html:190
+#: amana/templates/layout.html:222
 msgid "FAQ"
 msgstr ""
 
-#: amana/templates/mainxx.html:34 amana/templates/mainxx.html:341
+#: amana/templates/mainxx.html:34 amana/templates/mainxx.html:322
 msgid "Dr. Tamim Saqr"
 msgstr ""
 
-#: amana/templates/mainxx.html:38 amana/templates/mainxx.html:333
+#: amana/templates/mainxx.html:38 amana/templates/mainxx.html:314
 msgid "dr_info"
 msgstr ""
 "Dr. Tamim Saqr is a specialist in general surgery. With 20 years of "
@@ -178,122 +184,43 @@ msgstr ""
 " of America, Britain and Abu Dhabi. He graduated in 1994 after studying "
 "medicine in Syria."
 
-#: amana/templates/mainxx.html:248
+#: amana/templates/mainxx.html:228
 msgid "Stats"
 msgstr ""
 
-#: amana/templates/mainxx.html:254
+#: amana/templates/mainxx.html:234
 msgid "Successful Surgeries"
 msgstr ""
 
-#: amana/templates/mainxx.html:258
+#: amana/templates/mainxx.html:238
 msgid "patients"
 msgstr ""
 
-#: amana/templates/mainxx.html:262
+#: amana/templates/mainxx.html:243
+msgid "Years of Experience"
+msgstr ""
+
+#: amana/templates/mainxx.html:247
 msgid "Successful LHP"
 msgstr ""
 
 #: amana/templates/mainxx.html:266
-msgid "Years of Experience"
-msgstr ""
-
-#: amana/templates/mainxx.html:285
 msgid "Our Services"
 msgstr ""
 
-#: amana/templates/mainxx.html:318
+#: amana/templates/mainxx.html:299
 msgid "Medical Staff"
 msgstr ""
 
-#: amana/templates/mainxx.html:341
+#: amana/templates/mainxx.html:322
 msgid "USA, UK, UAE, Syria."
 msgstr ""
 
-#~ msgid "ID_Studio"
-#~ msgstr ""
+#: amana/templates/mainxx.html:350
+msgid "nurse_info"
+msgstr "Viola has been working for some time now with Dr. Saqr at Amana Clinic and is a certified nurse by Abudhabi's Department of health"
 
-#~ msgid "ID_undisclosed"
-#~ msgstr ""
-
-#~ msgid "nav_ID_3_1"
-#~ msgstr ""
-
-#~ msgid "nav_ID_4_1"
-#~ msgstr ""
-
-#~ msgid "nav_ID_3_2"
-#~ msgstr ""
-
-#~ msgid "nav_ID_4_2"
-#~ msgstr ""
-
-#~ msgid "nav_ID_3_3"
-#~ msgstr ""
-
-#~ msgid "Milage"
-#~ msgstr ""
-
-#~ msgid "Bedrooms"
-#~ msgstr ""
-
-#~ msgid "Bathrooms"
-#~ msgstr ""
-
-#~ msgid "Area"
-#~ msgstr ""
-
-#~ msgid "Quick_Links"
-#~ msgstr ""
-
-#~ msgid "For_you"
-#~ msgstr ""
-
-#~ msgid "Popular_Semsar_Cars"
-#~ msgstr ""
-
-#~ msgid "Cars_Sale"
-#~ msgstr ""
-
-#~ msgid "Cars_Sale_dubai"
-#~ msgstr ""
-
-#~ msgid "Cars_Sale_Abudhabi"
-#~ msgstr ""
-
-#~ msgid "All Categories"
-#~ msgstr ""
-
-#~ msgid "Popular_Semsar_Phones"
-#~ msgstr ""
-
-#~ msgid "Popular_Semsar_Property"
-#~ msgstr ""
-
-#~ msgid "Apartments_Rent"
-#~ msgstr ""
-
-#~ msgid "Villas_Rent"
-#~ msgstr ""
-
-#~ msgid "Villas_Sale"
-#~ msgstr ""
-
-#~ msgid "Commercial_rent"
-#~ msgstr ""
-
-#~ msgid "Choose Service"
-#~ msgstr ""
-
-#~ msgid "The News"
-#~ msgstr ""
-
-#~ msgid "News"
-#~ msgstr ""
-
-#~ msgid "Main_page_intro_title"
-#~ msgstr ""
-
-#~ msgid "Main_page_intro_details"
-#~ msgstr ""
+#: amana/templates/mainxx.html:358
+msgid "Nurse"
+msgstr "Viola, Certified Nurse"
 

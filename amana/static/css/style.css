@@ -228,8 +228,7 @@ transition: .5s ease-in-out;
 
 
   .stats{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     gap: 3em;
     position: relative;
   }

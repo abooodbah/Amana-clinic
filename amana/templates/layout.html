@@ -94,56 +94,17 @@
 
                     <nav class="site-navigation d-flex justify-content-end align-items-center">
                         <ul class="d-flex flex-column flex-lg-row justify-content-lg-end align-items-center">
-                            <li class="mobile"><a href="{{url_for('main.home', locale = request.args.get('locale'))}}">{{_('Home')}}</a></li>
-                            <li class="mobile"><a href="{{url_for('main.about', locale = request.args.get('locale'))}}">{{_('About us')}}</a></li>
-                            <li class="mobile nav-item dropdown">
-                          <a class= "dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                          aria-haspopup="true" aria-expanded="false" href="#">{{_('Services')}}</a>
-                          <ul class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink" style="border: #35c3f9 2px solid; border-radius: 10px; background:white;">
-                          
-                            {%for Service in mainServices%}
-                            {%if not Service.subservices%}
-                            <li><a class="dropdown-item" href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = 'main' )}}">{{add_style_if_ar(Service.title_ar,Service.title_en)}}</a></li>
-                            {%else%}
-                            <li>
-                            <a class= "dropdown-item dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false" href="#">{{add_style_if_ar(Service.title_ar,Service.title_en)}}</a>
-                            
-                            <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink" style="border: none!important;">
-                              {%for subservice in Service.subservices%}
-                              <li><a class="dropdown-item" href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = 'main' )}}">{{add_style_if_ar(subservice.title_ar,subservice.title_en)}}</a></li>
-                              {%endfor%}
-                            </ul>
+                          <li class=" mobile current-menu-item"><a href="{{url_for('main.home', locale = request.args.get('locale'))}}">{{_('Home')}}</a></li>
+                          <li class="mobile"><a href="{{url_for('main.about', locale = request.args.get('locale'))}}">{{_('About us')}}</a></li>
+                          <li class=" mobile">
+                            <a href="{{url_for('main.services', locale = request.args.get('locale'), service= 1, type = 'main')}}"> {{_('Services')}}</a>                            
                           </li>
-                            {%endif%}
-                            {%endfor%}
-                          </ul>
-                          
-                        </li>
-                        <li class="mobile nav-item dropdown">
-                          <a class= "dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                          aria-haspopup="true" aria-expanded="false" href="#">{{_('LHP')}}</a>
-                          <ul class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink" style="border: #35c3f9 2px solid; border-radius: 10px; background:white;">
-
-                            {%for Service in hemorrhiodsServices%}
-                            {%if not Service.subservices%}
-                            <li><a class="dropdown-item" href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = hemorrhoids )}}">{{add_style_if_ar(Service.title_ar,Service.title_en)}}</a></li>
-                            {%else%}
-                            <li><a class= "dropdown-item dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false" href="#">{{add_style_if_ar(Service.title_ar,Service.title_en)}}</a>
-                            
-                            <ul class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink" style="border: none!important;">
-                              {%for subservice in Service.subservices%}
-                              <li><a class="dropdown-item" href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = hemorrhoids )}}">{{add_style_if_ar(subservice.title_ar,subservice.title_en)}}</a></li>
-                              {%endfor%}
-                            </ul>
+                          <!-- Dropdown -->
+                          <li class=" mobile">
+                            <a href="{{url_for('main.services', locale = request.args.get('locale'), service= 1, type = '')}}">{{_('LHP')}}</a>
                           </li>
-                            {%endif%}
-                            {%endfor%}
-                          
-                          </ul>
-                        </li>
-                            <li class="mobile"><a href="{{url_for('main.contact', locale = request.args.get('locale'))}}">{{_('Contact')}}</a></li>
+                          <li class="mobile"><a href="{{url_for('main.contact', locale = request.args.get('locale'))}}">{{_('Contact')}}</a></li>
+                          <li class="blue-bg mobile" style="border-radius: 120px;background:linear-gradient(270deg, rgba(50,200,250,1) 0%, rgba(88,125,228,1) 100%)!important; box-shadow: 2px 2px 4px #0069d969, -2px -2px 4px #008dff73;"><a style="color: white; max-height: fit-content;padding: 15px;margin: 0;" class="scroll-link" href="#booking">{{_('Book an Appointment')}}</a></li>
                             <li class="call-btn button gradient-bg blue-bg mt-3 mt-md-0" style="direction: ltr;box-shadow: 2px 2px 4px #0069d969, -2px -2px 4px #008dff73;">
                                 <a class="d-flex justify-content-center align-items-center " style="font-family: Segoe UI light;" href="tel:+97126228660"><img src="static/img/phone.svg" style=" width: 25px; filter: invert(100%); "> +971 2 622 8660</a>
                             </li>

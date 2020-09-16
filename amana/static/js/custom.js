@@ -73,9 +73,10 @@
         var url_string = window.location.href
         var url = new URL(url_string);
         var param = url.searchParams.get("service");
-        console.log(param);
+        if(param != null){
         $('.tab-nav:nth-child(' + param + ')').trigger('click');
-    });
+    }
+});
 
     // Circular Progress Bar
     $('#loader_1').circleProgress({

@@ -73,7 +73,7 @@
                             {%if not Service.subservices%}
                             <li><a class="dropdown-item" href="{{url_for('main.services', locale = request.args.get('locale'), service= loop.index, type = hemorrhoids )}}">{{add_style_if_ar(Service.title_ar,Service.title_en)}}</a></li>
                             {%else%}
-                            <li><a>{{add_style_if_ar(Service.title_ar,Service.title_en)}}</a>
+                            <li><a>{{add_style_if_ar(Service.title_ar,Service.title_en)}} <i class="{{add_style_if_ar('fa fa-arrow-left','fa fa-arrow-right' )}}" aria-hidden="true"></i></a>
                             
                             <ul class="submenu" aria-labelledby="navbarDropdownMenuLink" style="border: none!important;">
                               {%for subservice in Service.subservices%}

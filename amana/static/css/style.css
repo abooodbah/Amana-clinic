@@ -2022,7 +2022,6 @@ display: none;
     bottom: 0;
     background-color: #fff; /* Black background with opacity */
     z-index: 21212312; /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer; /* Add a pointer on hover */
   }
 
 
@@ -2039,3 +2038,7 @@ min-width: 100%;
 
   }
 
+.hide{
+    display: none!important;
+
+}

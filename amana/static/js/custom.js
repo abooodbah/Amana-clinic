@@ -288,10 +288,10 @@ function Counter(data) {
     if (isScrolledIntoView(counters[i])) new Counter(data);
   }
 
-
+  setTimeout(function(){ document.getElementById("overlay").classList.add("hide"); }, 1500);
 
 
   window.onload = (event) => {
-    $("#overlay").animate({'opacity':'0'},500);
     $('.fade').first().animate({'opacity':'1'},2000);
+
   };

@@ -229,6 +229,14 @@ transition: .5s ease-in-out;
     gap: 3em;
     position: relative;
   }
+
+  @media screen and (min-width: 768px) {
+  .stats{
+    display: flex;
+    gap: 1.75em;
+    position: relative;
+  }
+}
   
   .stats span{
     font-weight: 600;

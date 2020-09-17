@@ -5,6 +5,7 @@ body {
     font-size: 16px;
     line-height: 1.8;
     font-family: 'Segoe UI light', sans-serif;
+    overflow-x: hidden;
     
 }
 ul::-webkit-scrollbar {
@@ -28,10 +29,6 @@ a:visited {
 
 a:hover, a:focus, a:active {
     color: #262626;
-}
-
-a:focus {
-    outline: thin dotted;
 }
 
 a:hover, a:active {
@@ -1944,3 +1941,101 @@ display: none;
   .cm-e-menu li.divider:hover {
       background-color: black;
   }
+
+
+
+  .lds-ellipsis {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    position: relative;
+    left: 0.5%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  @media screen and (max-width: 992px){
+    .lds-ellipsis {
+        left: 1.5%;
+    }
+  }
+  .lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #203b7e;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+  .lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+  }
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(24px, 0);
+    }
+  }
+
+
+  #overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: block; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff; /* Black background with opacity */
+    z-index: 21212312; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }
+
+
+  #loading-div > img{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #loading-div{
+position: absolute;
+top: 50%;
+min-width: 100%;
+
+  }
+

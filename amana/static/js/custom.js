@@ -204,9 +204,7 @@ $(document).ready(function() {
     
 });
 
-window.onload = (event) => {
-    $('.fade').first().animate({'opacity':'1'},500);
-  };
+
 
 
 
@@ -289,3 +287,11 @@ function Counter(data) {
     // Creates the counter
     if (isScrolledIntoView(counters[i])) new Counter(data);
   }
+
+
+
+
+  window.onload = (event) => {
+    $("#overlay").animate({'opacity':'0'},500);
+    $('.fade').first().animate({'opacity':'1'},2000);
+  };

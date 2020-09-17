@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-09-15 23:36+0400\n"
+"POT-Creation-Date: 2020-09-17 17:07+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgid "name"
 msgstr ""
 
 #: amana/main/forms.py:16 amana/main/forms.py:31
-#: amana/templates/contact.html:319 amana/templates/layout.html:207
+#: amana/templates/contact.html:318 amana/templates/layout.html:168
 msgid "Email"
 msgstr ""
 
@@ -67,56 +67,56 @@ msgid "Your appointment has been booked"
 msgstr ""
 
 #: amana/templates/Service.html:6 amana/templates/Service.html:11
-#: amana/templates/layout.html:46 amana/templates/layout.html:101
-#: amana/templates/layout.html:219
+#: amana/templates/layout.html:46 amana/templates/layout.html:100
+#: amana/templates/layout.html:180
 msgid "Services"
 msgstr ""
 
 #: amana/templates/Service.html:10 amana/templates/about.html:10
 #: amana/templates/contact.html:10 amana/templates/layout.html:43
-#: amana/templates/layout.html:97 amana/templates/layout.html:217
+#: amana/templates/layout.html:97 amana/templates/layout.html:178
 msgid "Home"
 msgstr ""
 
-#: amana/templates/Service.html:90 amana/templates/contact.html:173
-#: amana/templates/layout.html:90 amana/templates/mainxx.html:79
+#: amana/templates/Service.html:89 amana/templates/contact.html:172
+#: amana/templates/layout.html:90 amana/templates/layout.html:107
+#: amana/templates/mainxx.html:79
 msgid "Book an Appointment"
 msgstr ""
 
-#: amana/templates/Service.html:216 amana/templates/mainxx.html:204
+#: amana/templates/Service.html:215 amana/templates/mainxx.html:204
 msgid "What we do At Amana Clinic"
 msgstr ""
 
-#: amana/templates/Service.html:222 amana/templates/Service.html:266
-#: amana/templates/contact.html:365 amana/templates/mainxx.html:20
-#: amana/templates/mainxx.html:42 amana/templates/mainxx.html:210
-#: amana/templates/mainxx.html:282
+#: amana/templates/Service.html:221 amana/templates/contact.html:364
+#: amana/templates/mainxx.html:20 amana/templates/mainxx.html:42
+#: amana/templates/mainxx.html:210 amana/templates/mainxx.html:282
 msgid "read more"
 msgstr ""
 
-#: amana/templates/Service.html:240 amana/templates/contact.html:339
-msgid "Opening hours"
+#: amana/templates/Service.html:239 amana/templates/mainxx.html:228
+msgid "Stats"
 msgstr ""
 
-#: amana/templates/Service.html:242 amana/templates/contact.html:341
-msgid "Sunday - Thursday"
+#: amana/templates/Service.html:245 amana/templates/mainxx.html:234
+msgid "Successful Surgeries"
 msgstr ""
 
-#: amana/templates/Service.html:251 amana/templates/contact.html:350
-msgid "Saturday"
+#: amana/templates/Service.html:249 amana/templates/mainxx.html:238
+msgid "patients"
 msgstr ""
 
-#: amana/templates/Service.html:260 amana/templates/contact.html:359
-msgid "Friday"
+#: amana/templates/Service.html:254 amana/templates/mainxx.html:243
+msgid "Years of Experience"
 msgstr ""
 
-#: amana/templates/Service.html:262 amana/templates/contact.html:361
-msgid "CLOSED"
+#: amana/templates/Service.html:258 amana/templates/mainxx.html:247
+msgid "Successful LHP"
 msgstr ""
 
 #: amana/templates/about.html:6 amana/templates/about.html:11
 #: amana/templates/layout.html:44 amana/templates/layout.html:98
-#: amana/templates/layout.html:218
+#: amana/templates/layout.html:179
 msgid "About us"
 msgstr ""
 
@@ -124,79 +124,81 @@ msgstr ""
 msgid "Amana_Clinic"
 msgstr ""
 
-#: amana/templates/about.html:45
+#: amana/templates/about.html:46 amana/templates/mainxx.html:34
+#: amana/templates/mainxx.html:322
+msgid "Dr. Tamim Saqr"
+msgstr ""
+
+#: amana/templates/about.html:48 amana/templates/mainxx.html:38
+#: amana/templates/mainxx.html:314
+msgid "dr_info"
+msgstr ""
+
+#: amana/templates/about.html:72
 msgid "Faq"
 msgstr ""
 
 #: amana/templates/contact.html:6 amana/templates/contact.html:11
-#: amana/templates/contact.html:298 amana/templates/layout.html:89
-#: amana/templates/layout.html:146 amana/templates/layout.html:202
-#: amana/templates/layout.html:220
+#: amana/templates/contact.html:297 amana/templates/layout.html:89
+#: amana/templates/layout.html:106 amana/templates/layout.html:163
+#: amana/templates/layout.html:181
 msgid "Contact"
 msgstr ""
 
-#: amana/templates/contact.html:42
+#: amana/templates/contact.html:41
 msgid "Get in Touch"
 msgstr ""
 
-#: amana/templates/contact.html:303 amana/templates/layout.html:205
+#: amana/templates/contact.html:302 amana/templates/layout.html:166
 msgid "Address"
 msgstr ""
 
-#: amana/templates/contact.html:307 amana/templates/layout.html:206
+#: amana/templates/contact.html:306 amana/templates/layout.html:167
 msgid "Phone"
 msgstr ""
 
-#: amana/templates/contact.html:311
+#: amana/templates/contact.html:310
 msgid "Fax"
 msgstr ""
 
-#: amana/templates/contact.html:315
+#: amana/templates/contact.html:314
 msgid "Mobile phone"
 msgstr ""
 
-#: amana/templates/layout.html:69 amana/templates/layout.html:125
+#: amana/templates/contact.html:338
+msgid "Opening hours"
+msgstr ""
+
+#: amana/templates/contact.html:340
+msgid "Sunday - Thursday"
+msgstr ""
+
+#: amana/templates/contact.html:349
+msgid "Saturday"
+msgstr ""
+
+#: amana/templates/contact.html:358
+msgid "Friday"
+msgstr ""
+
+#: amana/templates/contact.html:360
+msgid "CLOSED"
+msgstr ""
+
+#: amana/templates/layout.html:69 amana/templates/layout.html:104
 msgid "LHP"
 msgstr ""
 
-#: amana/templates/layout.html:214
+#: amana/templates/layout.html:175
 msgid "Usefull Links"
 msgstr ""
 
-#: amana/templates/layout.html:221
+#: amana/templates/layout.html:182
 msgid "control_panel"
 msgstr ""
 
-#: amana/templates/layout.html:222
+#: amana/templates/layout.html:183
 msgid "FAQ"
-msgstr ""
-
-#: amana/templates/mainxx.html:34 amana/templates/mainxx.html:322
-msgid "Dr. Tamim Saqr"
-msgstr ""
-
-#: amana/templates/mainxx.html:38 amana/templates/mainxx.html:314
-msgid "dr_info"
-msgstr ""
-
-#: amana/templates/mainxx.html:228
-msgid "Stats"
-msgstr ""
-
-#: amana/templates/mainxx.html:234
-msgid "Successful Surgeries"
-msgstr ""
-
-#: amana/templates/mainxx.html:238
-msgid "patients"
-msgstr ""
-
-#: amana/templates/mainxx.html:243
-msgid "Years of Experience"
-msgstr ""
-
-#: amana/templates/mainxx.html:247
-msgid "Successful LHP"
 msgstr ""
 
 #: amana/templates/mainxx.html:266

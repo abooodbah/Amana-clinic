@@ -288,7 +288,7 @@ function Counter(data) {
     if (isScrolledIntoView(counters[i])) new Counter(data);
   }
 
-  setTimeout(function(){ document.getElementById("overlay").classList.add("hide"); }, 1500);
+  setTimeout(function(){ document.getElementById("overlay").classList.add("hide"); }, 750);
 
 
   window.onload = (event) => {

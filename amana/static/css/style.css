@@ -708,6 +708,12 @@ ul.tabs-nav .tab-nav.active {
     min-width: 15vw;
 }
 
+@media screen and (max-width: 450px){
+ul.tabs-nav .tab-nav.active {
+    min-width: 50vw;
+}
+}
+
 .tabs .tab-nav {
     margin-bottom: -1px;
     z-index: 99;

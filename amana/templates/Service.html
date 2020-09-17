@@ -67,9 +67,29 @@
         </div>
     </div>
 </div>
+</main>
+<div class="faq-stuff" style="background: url({{ url_for('static', filename = 'images/faq-bg.jpg') }}) no-repeat center #fff;position: relative;padding: 48px 0;background-size: cover;font-size: 14px;color: #828282;">
+  <div class="container">
+      <div class="row" style="{{add_style_if_ar('direction: rtl;text-align: right;', 'direction: ltr;text-align: left;')}}">
+          <div class="col-12">
+              <h2>{{_("Faq")}}</h2>
+          </div>
+          <div class="col-12">
+              <div class="accordion-wrap type-accordion">
+          {%for faq in FAQ%}
+          
+                  <h3 class="entry-title d-flex justify-content-between align-items-center {{'active' if (loop.index == 0) else '' }}">{{add_style_if_ar(faq.title_ar,faq.title_en)}}<span class="arrow-r"></span></h3>
 
-
-
+                  <div class="entry-content {{'accordion-active' if (loop.index == 0) else '' }}" style="display: {{'none' if (loop.index != 1) else 'block' }};">
+                      <p>{{add_style_if_ar(faq.content_ar,faq.content_en)}}</p>
+                  </div>
+          {%endfor%}
+      </div>
+  </div>
+      </div>
+  </div>
+</div>
+<main role="main" class="container mb-0 mt-0">
 <section>
   <div class="container-fluid white lighten-4 mb-0 mt-0 ">
 

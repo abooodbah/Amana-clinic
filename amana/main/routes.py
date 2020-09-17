@@ -120,14 +120,15 @@ Service: {bookingform.service.data}
 @main.route("/about")
 def about():
     info = Information_and_Records.query.first()
-    FAQs = FAQ.query
-    return render_template('about.html', title='About', info = info, FAQ= FAQs)
+    
+    return render_template('about.html', title='About', info = info)
 
 
 @main.route("/Services", methods=['GET', 'POST'])
 def services():
     servicetype = request.args.get('type')
     info = Information_and_Records.query.first()
+    FAQs = FAQ.query
     if ('main' in servicetype):
         Services = MainService.query.all()
     else:
@@ -164,7 +165,7 @@ Service: {bookingform.service.data}
         mail.send(msg)
         flash(_('Your appointment has been booked'), 'success')
         return redirect(url_for('main.contact'))
-    return render_template('Service.html', title='MainService', legend='New MainService', Services = Services,info = info, contactform=contactform, bookingform=bookingform)
+    return render_template('Service.html', title='MainService', legend='New MainService', Services = Services,info = info, contactform=contactform, bookingform=bookingform, FAQ= FAQs)
 
 @main.route("/news")
 def news():

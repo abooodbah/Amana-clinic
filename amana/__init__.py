@@ -88,11 +88,11 @@ from amana.errors.handlers import errors
 app.register_blueprint(errors)
 
 #Initialize flask_admin
-from amana.utils import secure_model_view,secure_index_view
+from amana.utils import secure_model_view, secure_index_view, setup_admin_account
+setup_admin_account()
 admin = Admin(app, index_view=secure_index_view())
 #add views to flask_admin
 from amana.models import User, FAQ, NewsPost, MainService, HemorrhiodsService, SubService,Service, Information_and_Records
-admin.add_view(secure_model_view(User, db.session))
 admin.add_view(secure_model_view(Information_and_Records, db.session))
 admin.add_view(secure_model_view(MainService, db.session))
 admin.add_view(secure_model_view(HemorrhiodsService, db.session))

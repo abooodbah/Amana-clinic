@@ -716,7 +716,6 @@ ul.tabs-nav .tab-nav.active {
 }
 
 .tab-content img {
-    float: left;
     margin-right: 32px;
     margin-bottom: 32px;
 }

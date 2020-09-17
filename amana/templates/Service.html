@@ -16,7 +16,7 @@
     </div>
 </div>
 
-<img class="header-img"  style="{{add_style_if_ar('right: unset;transform: scaleX(-1);' , 'right: 0;')}}position: absolute;top: 0;max-width: 65%;height: auto;" src="static/images/hero-bg-3.png" alt="">
+<img class="header-img"  style="{{add_style_if_ar('right: unset;transform: scaleX(-1);' , 'right: 0;')}}position: absolute;top: 0;max-width: 65%;height: auto;" src="" alt="">
 </header><!-- .site-header -->
 
 <main role="main" class="container mb-0 mt-0" >
@@ -37,7 +37,7 @@
                         {% for service in Services %}
                       
                         <div class="tab_{{ service.id }} tab-content" style="display: block;">
-                            <img src="static/images/services/{{ service.id }}.jpg" alt="" style="max-width: 290px;">
+                            <img src="static/images/Services/{{ service.id }}.jpg" alt="" style="max-width: 290px; float: {{add_style_if_ar('left','right')}};">
                         <h4 style="font-size: {{service.title_Font_size if service.title_Font_size else ''}}pt; color:{{service.title_font_color if service.title_font_color else ''}};">{{add_style_if_ar(service.title_ar,service.title_en)}} </h4>
 
                             <p style="font-size: {{service.content_Font_size if service.content_Font_size else ''}}pt; color:{{service.content_font_color if service.content_font_color else ''}};">{{add_style_if_ar(service.content_ar,service.content_en)}}</p>

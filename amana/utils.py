@@ -21,7 +21,7 @@ class secure_index_view(AdminIndexView):
 		return is_admin(current_user)
 
 def is_admin(user: User):
-	admin = User.query.filter_by(username = 'admin').first()
+	admin = User.query.first()
 	if user == admin:
 		return True
 	return False

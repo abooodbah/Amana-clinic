@@ -141,7 +141,7 @@ def services():
     if contactform.email.data and contactform.name.data and not bookingform.phone.data:
         msg = Message(contactform.subject.data,
                   sender='Amanaclinicemail@gmail.com',
-                  recipients=[contactform.email.data])
+                  recipients=[contactform.email.data, 'amana_clinic1@hotmail.com'])
         msg.body = f'''from: {contactform.email.data}
 Sender: {contactform.name.data}
 
@@ -155,7 +155,7 @@ Sender: {contactform.name.data}
     if bookingform.email.data and bookingform.phone.data:
         msg = Message('Appointment on {bookingform.date.data}',
                   sender='Amanaclinicemail@gmail.com',
-                  recipients=[bookingform.email.data])
+                  recipients=[bookingform.email.data, 'amana_clinic1@hotmail.com'])
         msg.body = f'''from: {bookingform.email.data}
 Sender: {bookingform.name.data}
 Phone: {bookingform.phone.data}

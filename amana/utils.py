@@ -4,23 +4,30 @@ from amana.models import User
 from flask_login import current_user
 from flask import abort
 from amana import db
+from flask import render_template, url_for, flash, redirect, request, Blueprint
+
 
 
 class secure_model_view(ModelView):
 	def is_accessible(self):
-		return is_admin(current_user)
+		print("Sucess-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+		return current_user.is_authenticated
 
 	def inaccessible_callback(self, name, **kwargs):
-		abort(403)
-		return
+		return redirect(url_for('users.login'))
 
 
 
 class secure_index_view(AdminIndexView):
 	def is_accessible(self):
-		return is_admin(current_user)
+		print("Sucess-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+		return current_user.is_authenticated
+
+	def inaccessible_callback(self, name, **kwargs):
+		return redirect(url_for('users.login'))
 
 def is_admin(user: User):
+	return False
 	admin = User.query.first()
 	if user == admin:
 		return True

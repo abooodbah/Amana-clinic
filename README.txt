@@ -1,4 +1,5 @@
 This repositry is for a web application that is used by a clinic in abudhabi
+This Web APP is hosted on HEROKU
 
 version: 1.0.1a
 

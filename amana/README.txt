@@ -1,26 +1,21 @@
-Material Design for Bootstrap
+This repositry is for a web application that is used by a clinic in abudhabi
 
-version: MDB Blog 4.8.9
+version: 1.0.1a
 
-Documentation:
-https://mdbootstrap.com/
 
-Getting started:
-https://mdbootstrap.com/docs/jquery/getting-started/download/
-
-Tutorials:
-MDB-Bootstrap: https://mdbootstrap.com/education/bootstrap/
-MDB-Wordpress: https://mdbootstrap.com/education/wordpress/
+Technologies and frameworks used:
+https://flask.palletsprojects.com/en/1.1.x/
+https://www.sqlalchemy.org/
+https://mdbootstrap.github.io/bootstrap-material-design/docs/4.0/getting-started/introduction/
+https://swiperjs.com/swiper-api
 
 Templates:
 https://mdbootstrap.com/templates/
 
 License:
+https://flask.palletsprojects.com/en/1.1.x/license/#source-license
 https://mdbootstrap.com/general/license/
 
-Support:
-https://mdbootstrap.com/forums/forum/support/
-
 Contact:
-office@mdbootstrap.com
+abdulfatah.bahbouh@hotmail.com
 

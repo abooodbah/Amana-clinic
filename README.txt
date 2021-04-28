@@ -10,9 +10,6 @@ https://www.sqlalchemy.org/
 https://mdbootstrap.github.io/bootstrap-material-design/docs/4.0/getting-started/introduction/
 https://swiperjs.com/swiper-api
 
-Templates:
-https://mdbootstrap.com/templates/
-
 License:
 https://flask.palletsprojects.com/en/1.1.x/license/#source-license
 https://mdbootstrap.com/general/license/
